@@ -18,10 +18,25 @@ public class DataAccessHelper {
         return instance;
     }
     public void getConnect () throws SQLException, ClassNotFoundException{
+        //sql_server
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        // jdbc:sqlserver://[servername]:port;user=;password=;
-        String url = "jdbc:sqlserver://localhost:1433;databaseName=CNPM2020;user=sa;password=123456789";
-        connection = DriverManager.getConnection(url);
+        String url = "jdbc:sqlserver://localhost:1433;databaseName=CNPM2020;";
+        String user="sa";
+        String password="123456789";
+        
+//        mysql
+//        Class.forName("com.mysql.cj.jdbc.Driver");
+//        String url = "jdbc:mysql://localhost:8080/cnpm2020";
+//        String user ="root";
+//        String password ="";
+
+//        oracle
+//        Class.forName("oracle.jdbc.driver.OracleDriver");
+//        String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+//        String user ="test";
+//        String password = "admin";
+
+        connection = DriverManager.getConnection(url, user, password);
     }
     public void getClose() throws SQLException{
         connection.close();

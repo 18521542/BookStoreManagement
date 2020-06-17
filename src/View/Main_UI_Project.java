@@ -150,7 +150,7 @@ public class Main_UI_Project extends javax.swing.JFrame {
             Name_Info.setText(InstanceUser.getRealName());
             Email_Info.setText(InstanceUser.getEmail());
             String chucvu;
-            if(InstanceUser.getType()==1){
+            if(InstanceUser.getType()==0){
                   chucvu="Admin";
             }
             else 

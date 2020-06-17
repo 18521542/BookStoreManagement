@@ -4,9 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/DoAnMonHoc/src/Controller/AccountController.java</file>
+            <file>file:/D:/DoAnMonHoc/src/View/FCashReceive.java</file>
             <file>file:/D:/DoAnMonHoc/src/View/Main_UI_Project.java</file>
+            <file>file:/D:/DoAnMonHoc/src/Model/DataAccessHelper.java</file>
             <file>file:/D:/DoAnMonHoc/src/View/LoginForm.java</file>
+            <file>file:/D:/DoAnMonHoc/src/View/FCategoryAndPublisher.java</file>
             <file>file:/D:/DoAnMonHoc/src/Model/Account.java</file>
+            <file>file:/D:/DoAnMonHoc/src/View/FBookReceive.java</file>
             <file>file:/D:/DoAnMonHoc/src/View/FStaff.java</file>
         </group>
     </open-files>

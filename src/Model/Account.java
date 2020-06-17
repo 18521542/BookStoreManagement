@@ -8,6 +8,7 @@ import java.sql.*;
 
 
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 
 public class Account {
@@ -56,9 +57,15 @@ public class Account {
         this.Email=p_Email;
         this.Address= p_Address;
     };
-    public boolean Login(String p_username, String p_password){    
+    public boolean Login(String p_username, String p_password){
+        //Sql_Server
         String sqlString = "EXEC USP_Login @p_username="+p_username+", @p_password="+p_password;
+        //MySQL
+        //String sqlString = "Call USP_Login('"+username+"','"+password+"')";
+        //Oracle
+        //String sqlString="Chua biet";
         //USP_Login là 1 procedure trong csdl
+//        String sqlString = ""
         try {
             DataAccessHelper.getInstance().getConnect();
             Statement statement = DataAccessHelper.getInstance().connection.createStatement();
@@ -98,5 +105,91 @@ public class Account {
         }
         return account_rs;
     }
-    
+    public ArrayList<Account> getAccount() {
+        String SQL="EXEC USP_GetAccount";
+        ArrayList<Account> list=new ArrayList<Account>();
+        try{
+            DataAccessHelper.getInstance().getConnect();
+            Statement statement =DataAccessHelper.getInstance().connection.createStatement();
+            ResultSet rs=statement.executeQuery(SQL);
+            while(rs.next())
+            {
+                list.add(new Account(rs.getString(1),rs.getString(2),rs.getInt(3),rs.getString(4),   
+                                     rs.getString(5),rs.getString(6),rs.getString(7)));
+            }
+            DataAccessHelper.getInstance().getClose();
+        } catch (Exception e) {}
+        return list;
+    }
+    public boolean AddAccount(String p_username, String p_password, int p_type, 
+                   String p_RealName, String p_PhoneNumber, String p_Email,String p_Address) {
+        String SQL="EXEC USP_AddAccount @p_username="   +p_username   +","+
+                                        "@p_password="   +p_password   +","+
+                                        "@p_type="       +p_type       +","+
+                                        "@p_RealName=N'"   +p_RealName   +"',"+
+                                        "@p_PhoneNumber="+p_PhoneNumber+","+
+                                        "@p_Email='"      +p_Email      +"',"+
+                                        "@p_Address=N'"    +p_Address    +"'";
+        try{
+            DataAccessHelper.getInstance().getConnect();
+            Statement statement =DataAccessHelper.getInstance().connection.createStatement();
+            int rs=statement.executeUpdate(SQL);
+            if(rs>0)
+            {
+                DataAccessHelper.getInstance().getClose();
+                return true;
+            }
+            else
+            {
+                DataAccessHelper.getInstance().getClose();
+                return false;
+            }
+        } catch (Exception e) {return false;}
+    }
+    public boolean DeleteAccountByUsername(String p_username){
+        //sql server
+        String SQL="EXEC USP_DeleteAccountByUsername @p_username="+p_username;
+        //mysql
+        // String SQL="Call USP_Login("
+        try{
+            DataAccessHelper.getInstance().getConnect();
+            Statement statement =DataAccessHelper.getInstance().connection.createStatement();
+            int rs=statement.executeUpdate(SQL);
+            if(rs>0)
+            {
+                DataAccessHelper.getInstance().getClose();
+                return true;
+            }
+            else
+            {
+                DataAccessHelper.getInstance().getClose();
+                return false;
+            }
+        } catch (ClassNotFoundException | SQLException e) {return false;}
+    }
+    public boolean UpdateAccountByUsername(String p_username, String p_password, int p_type, 
+                   String p_RealName, String p_PhoneNumber, String p_Email,String p_Address){
+         String SQL="EXEC USP_UpdateAccountByUsername @p_username='"   +p_username   +"', "+
+                                        "@p_password='"   +p_password   +"', "+
+                                        "@p_type="       +p_type       +", "+
+                                        "@p_RealName=N'"   +p_RealName   +"', "+
+                                        "@p_PhoneNumber='"+p_PhoneNumber+"', "+
+                                        "@p_Email='"      +p_Email      +"', "+
+                                        "@p_Address=N'"    +p_Address    +"'";
+        try{
+            DataAccessHelper.getInstance().getConnect();
+            Statement statement =DataAccessHelper.getInstance().connection.createStatement();
+            int rs=statement.executeUpdate(SQL);
+            if(rs>0)
+            {
+                DataAccessHelper.getInstance().getClose();
+                return true;
+            }
+            else
+            {
+                DataAccessHelper.getInstance().getClose();
+                return false;
+            }
+        } catch (Exception e) {return false;}
+    }
 }
