@@ -10,7 +10,6 @@ import javax.swing.JFrame;
 import javax.swing.border.Border;
 import javax.swing.JOptionPane;
 
-
 public class LoginForm extends javax.swing.JFrame {
 
     AccountController Controller=new AccountController();
@@ -218,7 +217,9 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_MinButtonMouseExited
 
     private void CancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButtonActionPerformed
-        
+        int result = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn muốn thoát?", "Chú ý", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (result == JOptionPane.YES_OPTION)
+            this.dispose();
     }//GEN-LAST:event_CancelButtonActionPerformed
 
     private void LoginButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButton1ActionPerformed
@@ -273,7 +274,6 @@ public class LoginForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_PasswordFieldFocusLost
 
-    
     public static void main(String args[]) {
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
