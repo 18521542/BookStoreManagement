@@ -16,9 +16,9 @@ EXEC USP_AddAccount @p_username  = test  ,
                     @p_password  = 123 ,
                     @p_type      = 2 ,
                     @p_RealName  = N'Nguyễn Văn A'  ,
-                    @p_PhoneNumber=0986269000 ,
-                    @p_Email      = test@gmail.com,
-                    @p_Address    = 4/2 Hồ Thị Kỷ;
+                    @p_PhoneNumber='0986269000' ,
+                    @p_Email      = 'test@gmail.com',
+                    @p_Address    = '4/2 Hồ Thị Kỷ';
 Delete  from Account where username ='test';
 
 
