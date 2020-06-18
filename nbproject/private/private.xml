@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/DoAnMonHoc/src/Controller/AccountController.java</file>
             <file>file:/D:/DoAnMonHoc/src/View/FCashReceive.java</file>
             <file>file:/D:/DoAnMonHoc/src/View/Main_UI_Project.java</file>
@@ -13,6 +14,10 @@
             <file>file:/D:/DoAnMonHoc/src/Model/Account.java</file>
             <file>file:/D:/DoAnMonHoc/src/View/FBookReceive.java</file>
             <file>file:/D:/DoAnMonHoc/src/View/FStaff.java</file>
+=======
+            <file>file:/E:/project/BookStoreManagement/src/View/FBookInventory.java</file>
+            <file>file:/E:/project/BookStoreManagement/src/View/FStaff.java</file>
+>>>>>>> 8674868d91c3e1faf4f7a27d6f4cf0bea1cfc6ef
         </group>
     </open-files>
 </project-private>
