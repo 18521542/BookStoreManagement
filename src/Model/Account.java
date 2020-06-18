@@ -1,8 +1,6 @@
 
 package Model;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.sql.SQLException;
 import java.sql.*;
 
@@ -190,6 +188,6 @@ public class Account {
                 DataAccessHelper.getInstance().getClose();
                 return false;
             }
-        } catch (Exception e) {return false;}
+        } catch (ClassNotFoundException | SQLException e) {return false;}
     }
 }
