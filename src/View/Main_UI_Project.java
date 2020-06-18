@@ -1,7 +1,6 @@
 
 package View;
 
-import Controller.AccountController;
 import Model.Account;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
