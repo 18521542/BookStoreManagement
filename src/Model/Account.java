@@ -59,7 +59,7 @@ public class Account {
         //Sql_Server
         String sqlString = "EXEC USP_Login @p_username="+p_username+", @p_password="+p_password;
         //MySQL
-        //String sqlString = "Call USP_Login('"+username+"','"+password+"')";
+//        String sqlString = "Call USP_Login('"+p_username+"','"+p_password+"')";
         //Oracle
         //String sqlString="Chua biet";
         //USP_Login là 1 procedure trong csdl
@@ -76,6 +76,7 @@ public class Account {
             DataAccessHelper.getInstance().getClose();
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println("Lỗi");
+            System.out.println(ex);
         }
         return false;
     } 
