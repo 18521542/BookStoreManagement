@@ -57,9 +57,9 @@ public class Account {
     };
     public boolean Login(String p_username, String p_password){
         //Sql_Server
-//        String sqlString = "EXEC USP_Login @p_username="+p_username+", @p_password="+p_password;
+        String sqlString = "EXEC USP_Login @p_username="+p_username+", @p_password="+p_password;
         //MySQL
-        String sqlString = "Call USP_Login('"+p_username+"','"+p_password+"')";
+        //String sqlString = "Call USP_Login('"+p_username+"','"+p_password+"')";
         //Oracle
         //String sqlString="Chua biet";
         //USP_Login là 1 procedure trong csdl
@@ -82,9 +82,9 @@ public class Account {
     } 
     public Account getAccountByUserName(String p_username){
         //sql server
-        //String sqlString= "EXEC USP_GetAccountByUsername @p_username= "+p_username;
+        String sqlString= "EXEC USP_GetAccountByUsername @p_username= "+p_username;
         //my sql
-        String sqlString= "Call USP_GetAccountByUsername ('"+p_username+"')";
+        //String sqlString= "Call USP_GetAccountByUsername ('"+p_username+"')";
         Account account_rs = null;
         try {
             DataAccessHelper.getInstance().getConnect();
@@ -108,7 +108,10 @@ public class Account {
         return account_rs;
     }
     public ArrayList<Account> getAccount() {
+        //SQL SERVER
         String SQL="EXEC USP_GetAccount";
+        //MySQL
+        //String SQL= "Call USP_GetAccount()";
         ArrayList<Account> list=new ArrayList<Account>();
         try{
             DataAccessHelper.getInstance().getConnect();
@@ -125,6 +128,7 @@ public class Account {
     }
     public boolean AddAccount(String p_username, String p_password, int p_type, 
                    String p_RealName, String p_PhoneNumber, String p_Email,String p_Address) {
+        //SQL SERVER
         String SQL="EXEC USP_AddAccount @p_username="   +p_username   +","+
                                         "@p_password="   +p_password   +","+
                                         "@p_type="       +p_type       +","+
@@ -132,6 +136,14 @@ public class Account {
                                         "@p_PhoneNumber="+p_PhoneNumber+","+
                                         "@p_Email='"      +p_Email      +"',"+
                                         "@p_Address=N'"    +p_Address    +"'";
+        //MySQL
+//        String SQL="Call USP_AddAccount ('"   +p_username   +"','"+
+//                                        p_password   +"','"+
+//                                        p_type       +"','"+
+//                                        p_RealName   +"','"+
+//                                        p_PhoneNumber+"','"+
+//                                        p_Email      +"','"+
+//                                        p_Address    +"')";
         try{
             DataAccessHelper.getInstance().getConnect();
             Statement statement =DataAccessHelper.getInstance().connection.createStatement();
@@ -152,7 +164,7 @@ public class Account {
         //sql server
         String SQL="EXEC USP_DeleteAccountByUsername @p_username="+p_username;
         //mysql
-        // String SQL="Call USP_Login("
+        //String SQL="Call USP_DeleteAccountByUsername('"+p_username+"')";
         try{
             DataAccessHelper.getInstance().getConnect();
             Statement statement =DataAccessHelper.getInstance().connection.createStatement();
@@ -171,6 +183,7 @@ public class Account {
     }
     public boolean UpdateAccountByUsername(String p_username, String p_password, int p_type, 
                    String p_RealName, String p_PhoneNumber, String p_Email,String p_Address){
+        //SQL SERVER
          String SQL="EXEC USP_UpdateAccountByUsername @p_username='"   +p_username   +"', "+
                                         "@p_password='"   +p_password   +"', "+
                                         "@p_type="       +p_type       +", "+
@@ -178,6 +191,14 @@ public class Account {
                                         "@p_PhoneNumber='"+p_PhoneNumber+"', "+
                                         "@p_Email='"      +p_Email      +"', "+
                                         "@p_Address=N'"    +p_Address    +"'";
+         //MySQL
+//        String SQL="Call USP_AddAccount ('"   +p_username   +"','"+
+//                                        p_password   +"','"+
+//                                        p_type       +"','"+
+//                                        p_RealName   +"','"+
+//                                        p_PhoneNumber+"','"+
+//                                        p_Email      +"','"+
+//                                        p_Address    +"')";
         try{
             DataAccessHelper.getInstance().getConnect();
             Statement statement =DataAccessHelper.getInstance().connection.createStatement();
