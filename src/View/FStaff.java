@@ -135,15 +135,15 @@ public class FStaff extends javax.swing.JPanel {
         Info_type.setBackground(new java.awt.Color(204, 204, 255));
         Info_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Chọn loại tài khoản--", "0: Admin", "1: Nhân viên",}));
 
-        jSeparator2.setBackground(new java.awt.Color(255, 0, 102));
-        jSeparator2.setForeground(new java.awt.Color(255, 0, 102));
+        jSeparator2.setBackground(new java.awt.Color(255, 204, 204));
+        jSeparator2.setForeground(new java.awt.Color(255, 204, 204));
         jSeparator2.setOpaque(true);
 
-        jSeparator1.setBackground(new java.awt.Color(255, 0, 0));
-        jSeparator1.setForeground(new java.awt.Color(255, 0, 0));
+        jSeparator1.setBackground(new java.awt.Color(255, 204, 204));
+        jSeparator1.setForeground(new java.awt.Color(255, 204, 204));
         jSeparator1.setOpaque(true);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 0, 51));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Thông tin chi tiết");

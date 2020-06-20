@@ -57,9 +57,9 @@ public class Account {
     };
     public boolean Login(String p_username, String p_password){
         //Sql_Server
-        String sqlString = "EXEC USP_Login @p_username="+p_username+", @p_password="+p_password;
+//        String sqlString = "EXEC USP_Login @p_username="+p_username+", @p_password="+p_password;
         //MySQL
-//        String sqlString = "Call USP_Login('"+p_username+"','"+p_password+"')";
+        String sqlString = "Call USP_Login('"+p_username+"','"+p_password+"')";
         //Oracle
         //String sqlString="Chua biet";
         //USP_Login là 1 procedure trong csdl
@@ -81,7 +81,10 @@ public class Account {
         return false;
     } 
     public Account getAccountByUserName(String p_username){
-        String sqlString= "EXEC USP_GetAccountByUsername @p_username= "+p_username;
+        //sql server
+        //String sqlString= "EXEC USP_GetAccountByUsername @p_username= "+p_username;
+        //my sql
+        String sqlString= "Call USP_GetAccountByUsername ('"+p_username+"')";
         Account account_rs = null;
         try {
             DataAccessHelper.getInstance().getConnect();
