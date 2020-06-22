@@ -158,7 +158,7 @@ public class Account {
                 DataAccessHelper.getInstance().getClose();
                 return false;
             }
-        } catch (Exception e) {return false;}
+        } catch (ClassNotFoundException | SQLException e) {return false;}
     }
     public boolean DeleteAccountByUsername(String p_username){
         //sql server

@@ -18,7 +18,7 @@ public class DataAccessHelper {
         return instance;
     }
     public void getConnect () throws SQLException, ClassNotFoundException{
-//        sql_server
+//      sql_server
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         String url = "jdbc:sqlserver://localhost:1433;databaseName=BookStoreData;";
         String user="sa";
