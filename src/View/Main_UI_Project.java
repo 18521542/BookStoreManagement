@@ -17,7 +17,6 @@ import javax.swing.border.Border;
 public class Main_UI_Project extends javax.swing.JFrame {
 
     Controller.AccountController controller;
-    //create MainMenu
     private static Main_UI_Project instance = null;
     public Account InstanceUser=null;
     public static Main_UI_Project getInstance()
@@ -26,12 +25,15 @@ public class Main_UI_Project extends javax.swing.JFrame {
             instance=new Main_UI_Project();
         return instance;
     }
+    
+    //coder defined
     public void setAccount(Account Instance_User){
         this.InstanceUser= Instance_User;
         this.setInfoUser();
     }
     private void  execute(){
         MenuPanelMAin.setVisible(false);     
+        fWelcome = new FWelcome();
         fCustomer = new FCustomer();
         fbill = new Fbill();
         fCashReceive = new FCashReceive();
@@ -100,8 +102,13 @@ public class Main_UI_Project extends javax.swing.JFrame {
         MenuItem menuQLNS_DSNV = new MenuItem(iconMenu, "DS nhân viên",new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            switchPanel(ContentPanel, fStaff);
-            UserPanel.setVisible(false);
+                if(InstanceUser.getType()==0){
+                    switchPanel(ContentPanel, fStaff);
+                    UserPanel.setVisible(false);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "You don't have permission to do this");
+                }
             }
         });
         MenuItem menuQLNK_TNV = new MenuItem(iconMenu, "Thêm nhân viên",new ActionListener() {
@@ -158,6 +165,12 @@ public class Main_UI_Project extends javax.swing.JFrame {
             Phone_Info.setText(InstanceUser.getPhoneNumber());
             Addr_Info.setText(InstanceUser.getAddress());
         }
+    }
+    private void switchPanel(JPanel parent, JPanel child){
+        parent.removeAll();
+        parent.add(child);
+        parent.repaint();
+        parent.revalidate();
     }
     
     //Constructor
@@ -480,16 +493,11 @@ public class Main_UI_Project extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     //Action in UI.
+    //Editor generated
     private void XbuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XbuttonMouseClicked
         System.exit(0);
     }//GEN-LAST:event_XbuttonMouseClicked
 
-    private void switchPanel(JPanel parent, JPanel child){
-        parent.removeAll();
-        parent.add(child);
-        parent.repaint();
-        parent.revalidate();
-    }
 
     private void XbuttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XbuttonMouseEntered
         Border Label_border = BorderFactory.createMatteBorder(1, 1, 1,1, Color.white);
@@ -604,8 +612,9 @@ public class Main_UI_Project extends javax.swing.JFrame {
                                                             JOptionPane.YES_NO_OPTION
                                                            ,JOptionPane.QUESTION_MESSAGE);
         if(response==JOptionPane.YES_OPTION){
-            this.setAccount(null);
-            this.setVisible(false);
+            switchPanel(ContentPanel, fWelcome);
+            Main_UI_Project.getInstance().setAccount(null);
+            Main_UI_Project.getInstance().setVisible(false);
             LoginForm.getInstance().setVisible(true);
         }
         else{
@@ -660,6 +669,7 @@ public class Main_UI_Project extends javax.swing.JFrame {
     private FReportRevenue fReportRevenue;
     private FStaff fStaff;
     private Fbill fbill; 
+    private FWelcome fWelcome;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AddrLabel;
     private javax.swing.JLabel Addr_Info;
