@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/DoAnMonHoc/src/Controller/AccountController.java</file>
             <file>file:/D:/DoAnMonHoc/src/View/FCashReceive.java</file>
             <file>file:/D:/DoAnMonHoc/src/View/Main_UI_Project.java</file>
@@ -20,6 +21,16 @@
             <file>file:/D:/DoAnMonHoc/src/View/FReportRevenue.java</file>
             <file>file:/D:/DoAnMonHoc/src/Image/Icon_QLBH.png</file>
             <file>file:/D:/DoAnMonHoc/src/View/MenuItem.java</file>
+=======
+            <file>file:/E:/project/BookStoreManagement/src/View/FBookInventory.java</file>
+            <file>file:/E:/project/BookStoreManagement/src/View/FBookReceive.java</file>
+            <file>file:/E:/project/BookStoreManagement/src/View/FReportInventory.java</file>
+            <file>file:/E:/project/BookStoreManagement/src/View/FReportRevenue.java</file>
+            <file>file:/E:/project/BookStoreManagement/src/View/FOptions.java</file>
+            <file>file:/E:/project/BookStoreManagement/src/View/FStaff.java</file>
+            <file>file:/E:/project/BookStoreManagement/src/View/FCashReceive.java</file>
+            <file>file:/E:/project/BookStoreManagement/src/View/Fbill.java</file>
+>>>>>>> 16010bf416014c2bce0424c2c1bdeb2b0694c972
         </group>
     </open-files>
 </project-private>

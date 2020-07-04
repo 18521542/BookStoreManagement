@@ -75,7 +75,7 @@ public class FReportRevenue extends javax.swing.JPanel {
         }
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(0, 182, 790, 450);
+        jScrollPane1.setBounds(0, 162, 790, 470);
 
         jLabel4.setText("Lọc theo: ");
         add(jLabel4);
@@ -92,7 +92,7 @@ public class FReportRevenue extends javax.swing.JPanel {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/reportAdd.png"))); // NOI18N
         add(jButton1);
-        jButton1.setBounds(370, 118, 50, 50);
+        jButton1.setBounds(378, 118, 35, 35);
         add(jSpinner2);
         jSpinner2.setBounds(430, 40, 70, 29);
         add(jSpinner1);

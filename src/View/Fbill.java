@@ -42,12 +42,8 @@ public class Fbill extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
         jTextField2 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
@@ -82,7 +78,7 @@ public class Fbill extends javax.swing.JPanel {
         }
 
         add(jScrollPane2);
-        jScrollPane2.setBounds(0, 390, 790, 240);
+        jScrollPane2.setBounds(0, 330, 790, 300);
 
         jLabel14.setText("Khách hàng");
         add(jLabel14);
@@ -132,7 +128,7 @@ public class Fbill extends javax.swing.JPanel {
         }
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(370, 50, 410, 170);
+        jScrollPane1.setBounds(370, 50, 410, 155);
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel3.setText("Hóa đơn");
@@ -141,48 +137,31 @@ public class Fbill extends javax.swing.JPanel {
 
         jLabel4.setText("Số lượng");
         add(jLabel4);
-        jLabel4.setBounds(630, 300, 50, 13);
+        jLabel4.setBounds(580, 297, 50, 13);
         add(jTextField1);
-        jTextField1.setBounds(690, 290, 90, 29);
+        jTextField1.setBounds(640, 290, 90, 29);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/billAdd.png"))); // NOI18N
         add(jButton1);
-        jButton1.setBounds(300, 170, 50, 50);
+        jButton1.setBounds(315, 170, 35, 35);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/bookAdd.png"))); // NOI18N
         add(jButton2);
-        jButton2.setBounds(730, 330, 50, 50);
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox2);
-        jComboBox2.setBounds(420, 290, 200, 29);
-
-        jComboBox3.setEditable(true);
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox3);
-        jComboBox3.setBounds(80, 340, 270, 29);
+        jButton2.setBounds(743, 286, 35, 35);
         add(jTextField2);
         jTextField2.setBounds(80, 290, 270, 29);
 
         jLabel5.setText("Tên sách");
         add(jLabel5);
-        jLabel5.setBounds(10, 300, 50, 13);
-
-        jLabel6.setText("Tác giả");
-        add(jLabel6);
-        jLabel6.setBounds(10, 350, 50, 13);
-
-        jLabel7.setText("Thể loại");
-        add(jLabel7);
-        jLabel7.setBounds(370, 300, 120, 13);
+        jLabel5.setBounds(10, 297, 50, 13);
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/bookSearch.png"))); // NOI18N
         add(jButton3);
-        jButton3.setBounds(420, 330, 50, 50);
+        jButton3.setBounds(360, 286, 35, 35);
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/bookDel.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/delete.png"))); // NOI18N
         add(jButton4);
-        jButton4.setBounds(730, 230, 50, 50);
+        jButton4.setBounds(743, 213, 35, 35);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Bill_Background.jpg"))); // NOI18N
         add(jLabel8);
@@ -195,8 +174,6 @@ public class Fbill extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel14;
@@ -206,8 +183,6 @@ public class Fbill extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

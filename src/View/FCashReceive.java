@@ -62,7 +62,7 @@ public class FCashReceive extends javax.swing.JPanel {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/paymentAdd.png"))); // NOI18N
         add(jButton1);
-        jButton1.setBounds(370, 140, 50, 50);
+        jButton1.setBounds(378, 140, 35, 35);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -82,7 +82,7 @@ public class FCashReceive extends javax.swing.JPanel {
         }
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(0, 200, 790, 430);
+        jScrollPane1.setBounds(0, 190, 790, 440);
 
         jLabel11.setText("Nợ");
         add(jLabel11);

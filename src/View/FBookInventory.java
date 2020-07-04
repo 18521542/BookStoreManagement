@@ -91,19 +91,19 @@ public class FBookInventory extends javax.swing.JPanel {
         }
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(0, 199, 790, 430);
+        jScrollPane1.setBounds(0, 189, 790, 440);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/bookUpd.png"))); // NOI18N
         add(jButton2);
-        jButton2.setBounds(70, 140, 50, 50);
+        jButton2.setBounds(730, 80, 35, 35);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/bookDel.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/delete.png"))); // NOI18N
         add(jButton3);
-        jButton3.setBounds(140, 140, 50, 50);
+        jButton3.setBounds(730, 130, 35, 35);
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/bookSearch.png"))); // NOI18N
         add(jButton5);
-        jButton5.setBounds(710, 60, 70, 70);
+        jButton5.setBounds(730, 30, 35, 35);
 
         jComboBox2.setEditable(true);
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));

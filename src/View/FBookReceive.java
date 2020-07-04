@@ -105,21 +105,21 @@ public class FBookReceive extends javax.swing.JPanel {
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/bookAdd.png"))); // NOI18N
         add(jButton4);
-        jButton4.setBounds(420, 210, 50, 50);
+        jButton4.setBounds(441, 210, 35, 35);
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/bookUpd.png"))); // NOI18N
         add(jButton5);
-        jButton5.setBounds(480, 210, 50, 50);
+        jButton5.setBounds(497, 210, 35, 35);
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/bookDel.png"))); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/delete.png"))); // NOI18N
         add(jButton6);
-        jButton6.setBounds(540, 210, 50, 50);
+        jButton6.setBounds(554, 210, 35, 35);
 
         jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
         jCheckBox1.setText("Sách mới ?");
         jCheckBox1.setOpaque(false);
         add(jCheckBox1);
-        jCheckBox1.setBounds(260, 225, 100, 21);
+        jCheckBox1.setBounds(260, 217, 100, 21);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -144,11 +144,11 @@ public class FBookReceive extends javax.swing.JPanel {
 
         jTextField5.setEditable(false);
         add(jTextField5);
-        jTextField5.setBounds(570, 290, 136, 29);
+        jTextField5.setBounds(600, 300, 136, 29);
 
         jLabel8.setText("Tổng tiền");
         add(jLabel8);
-        jLabel8.setBounds(510, 298, 60, 13);
+        jLabel8.setBounds(540, 310, 60, 13);
 
         jComboBox3.setEditable(true);
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -158,11 +158,11 @@ public class FBookReceive extends javax.swing.JPanel {
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel13.setText("Danh sách sách nhập");
         add(jLabel13);
-        jLabel13.setBounds(305, 290, 180, 25);
+        jLabel13.setBounds(305, 270, 180, 25);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/importAdd.png"))); // NOI18N
         add(jButton1);
-        jButton1.setBounds(730, 280, 50, 50);
+        jButton1.setBounds(750, 300, 35, 35);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Import_Background.jpg"))); // NOI18N
         add(jLabel9);
