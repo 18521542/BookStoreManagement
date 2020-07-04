@@ -17,6 +17,7 @@ import javax.swing.border.Border;
 public class Main_UI_Project extends javax.swing.JFrame {
 
     Controller.AccountController controller;
+    //create MainMenu
     private static Main_UI_Project instance = null;
     public Account InstanceUser=null;
     public static Main_UI_Project getInstance()
@@ -25,15 +26,12 @@ public class Main_UI_Project extends javax.swing.JFrame {
             instance=new Main_UI_Project();
         return instance;
     }
-    
-    //coder defined
     public void setAccount(Account Instance_User){
         this.InstanceUser= Instance_User;
         this.setInfoUser();
     }
     private void  execute(){
         MenuPanelMAin.setVisible(false);     
-        fWelcome = new FWelcome();
         fCustomer = new FCustomer();
         fbill = new Fbill();
         fCashReceive = new FCashReceive();
@@ -102,13 +100,8 @@ public class Main_UI_Project extends javax.swing.JFrame {
         MenuItem menuQLNS_DSNV = new MenuItem(iconMenu, "DS nhân viên",new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(InstanceUser.getType()==0){
-                    switchPanel(ContentPanel, fStaff);
-                    UserPanel.setVisible(false);
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "You don't have permission to do this");
-                }
+            switchPanel(ContentPanel, fStaff);
+            UserPanel.setVisible(false);
             }
         });
         MenuItem menuQLNK_TNV = new MenuItem(iconMenu, "Thêm nhân viên",new ActionListener() {
@@ -166,12 +159,6 @@ public class Main_UI_Project extends javax.swing.JFrame {
             Addr_Info.setText(InstanceUser.getAddress());
         }
     }
-    private void switchPanel(JPanel parent, JPanel child){
-        parent.removeAll();
-        parent.add(child);
-        parent.repaint();
-        parent.revalidate();
-    }
     
     //Constructor
     public Main_UI_Project() {
@@ -205,6 +192,7 @@ public class Main_UI_Project extends javax.swing.JFrame {
         Email_Info = new javax.swing.JLabel();
         Addr_Info = new javax.swing.JLabel();
         ContentPanel = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         HeadPanel = new javax.swing.JPanel();
         Xbutton = new javax.swing.JLabel();
         MinButton = new javax.swing.JLabel();
@@ -346,6 +334,11 @@ public class Main_UI_Project extends javax.swing.JFrame {
         ContentPanel.setBackground(new java.awt.Color(0, 204, 255));
         ContentPanel.setPreferredSize(new java.awt.Dimension(790, 630));
         ContentPanel.setLayout(null);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Main_Background.jpg"))); // NOI18N
+        ContentPanel.add(jLabel2);
+        jLabel2.setBounds(0, 0, 790, 630);
+
         getContentPane().add(ContentPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 790, 630));
 
         HeadPanel.setBackground(new java.awt.Color(255, 51, 51));
@@ -493,11 +486,16 @@ public class Main_UI_Project extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     //Action in UI.
-    //Editor generated
     private void XbuttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XbuttonMouseClicked
         System.exit(0);
     }//GEN-LAST:event_XbuttonMouseClicked
 
+    private void switchPanel(JPanel parent, JPanel child){
+        parent.removeAll();
+        parent.add(child);
+        parent.repaint();
+        parent.revalidate();
+    }
 
     private void XbuttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XbuttonMouseEntered
         Border Label_border = BorderFactory.createMatteBorder(1, 1, 1,1, Color.white);
@@ -612,9 +610,8 @@ public class Main_UI_Project extends javax.swing.JFrame {
                                                             JOptionPane.YES_NO_OPTION
                                                            ,JOptionPane.QUESTION_MESSAGE);
         if(response==JOptionPane.YES_OPTION){
-            switchPanel(ContentPanel, fWelcome);
-            Main_UI_Project.getInstance().setAccount(null);
-            Main_UI_Project.getInstance().setVisible(false);
+            this.setAccount(null);
+            this.setVisible(false);
             LoginForm.getInstance().setVisible(true);
         }
         else{
@@ -669,8 +666,6 @@ public class Main_UI_Project extends javax.swing.JFrame {
     private FReportRevenue fReportRevenue;
     private FStaff fStaff;
     private Fbill fbill; 
-    private FWelcome fWelcome;
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AddrLabel;
     private javax.swing.JLabel Addr_Info;
@@ -696,6 +691,7 @@ public class Main_UI_Project extends javax.swing.JFrame {
     private javax.swing.JPanel UserPanel;
     private javax.swing.JLabel Xbutton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

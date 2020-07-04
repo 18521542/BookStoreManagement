@@ -110,6 +110,7 @@ public class MenuItem extends javax.swing.JPanel {
             hideMenu();
             showing = false;
         }else{
+            
             showMenu();
             showing=true;
         }
