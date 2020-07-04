@@ -68,7 +68,7 @@ public class FStaff extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 204, 51));
         setPreferredSize(new java.awt.Dimension(790, 630));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(null);
 
         List_Panel.setBackground(new java.awt.Color(255, 255, 255));
         List_Panel.setBorder(null);
@@ -96,183 +96,136 @@ public class FStaff extends javax.swing.JPanel {
         });
         List_Panel.setViewportView(Table_Account);
 
-        add(List_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, 790, 410));
+        add(List_Panel);
+        List_Panel.setBounds(0, 220, 790, 410);
 
         Panel_Info.setBackground(new java.awt.Color(204, 255, 255));
         Panel_Info.setFocusable(false);
+        Panel_Info.setLayout(null);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setForeground(new java.awt.Color(0, 0, 102));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Username");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Panel_Info.add(jLabel1);
+        jLabel1.setBounds(0, 72, 66, 24);
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 102));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Password");
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Panel_Info.add(jLabel2);
+        jLabel2.setBounds(0, 103, 66, 26);
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 102));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Real Name");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Panel_Info.add(jLabel3);
+        jLabel3.setBounds(0, 135, 66, 24);
+        Panel_Info.add(Info_username);
+        Info_username.setBounds(70, 73, 224, 24);
+        Panel_Info.add(Info_pass);
+        Info_pass.setBounds(70, 105, 224, 24);
+        Panel_Info.add(Info_realname);
+        Info_realname.setBounds(70, 136, 224, 24);
 
         jLabel5.setForeground(new java.awt.Color(0, 0, 102));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("Địa chỉ");
         jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Panel_Info.add(jLabel5);
+        jLabel5.setBounds(330, 72, 89, 24);
 
         jLabel6.setForeground(new java.awt.Color(0, 0, 102));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Email");
         jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Panel_Info.add(jLabel6);
+        jLabel6.setBounds(304, 104, 115, 24);
 
         jLabel7.setForeground(new java.awt.Color(0, 0, 102));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("SĐT");
         jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Panel_Info.add(jLabel7);
+        jLabel7.setBounds(304, 135, 115, 24);
+        Panel_Info.add(Info_address);
+        Info_address.setBounds(423, 73, 248, 24);
+        Panel_Info.add(Info_email);
+        Info_email.setBounds(423, 105, 248, 24);
+        Panel_Info.add(Info_phone);
+        Info_phone.setBounds(423, 136, 90, 24);
 
         Info_type.setBackground(new java.awt.Color(204, 204, 255));
         Info_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Chọn loại tài khoản--", "0: Admin", "1: Nhân viên",}));
+        Panel_Info.add(Info_type);
+        Info_type.setBounds(519, 137, 152, 21);
 
         jSeparator2.setBackground(new java.awt.Color(255, 204, 204));
         jSeparator2.setForeground(new java.awt.Color(255, 204, 204));
         jSeparator2.setOpaque(true);
+        Panel_Info.add(jSeparator2);
+        jSeparator2.setBounds(0, 50, 710, 4);
 
         jSeparator1.setBackground(new java.awt.Color(255, 204, 204));
         jSeparator1.setForeground(new java.awt.Color(255, 204, 204));
         jSeparator1.setOpaque(true);
+        Panel_Info.add(jSeparator1);
+        jSeparator1.setBounds(0, 178, 710, 3);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 0, 51));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Thông tin chi tiết");
+        Panel_Info.add(jLabel4);
+        jLabel4.setBounds(0, 0, 700, 44);
 
-        javax.swing.GroupLayout Panel_InfoLayout = new javax.swing.GroupLayout(Panel_Info);
-        Panel_Info.setLayout(Panel_InfoLayout);
-        Panel_InfoLayout.setHorizontalGroup(
-            Panel_InfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel_InfoLayout.createSequentialGroup()
-                .addGroup(Panel_InfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Panel_InfoLayout.createSequentialGroup()
-                        .addGroup(Panel_InfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Panel_InfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Info_username, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
-                            .addComponent(Info_pass)
-                            .addComponent(Info_realname))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(Panel_InfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(Panel_InfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(Panel_InfoLayout.createSequentialGroup()
-                                .addComponent(Info_phone)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Info_type, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(Info_email, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Info_address, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 27, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addComponent(jSeparator2)
-            .addComponent(jSeparator1)
-        );
-        Panel_InfoLayout.setVerticalGroup(
-            Panel_InfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_InfoLayout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(Panel_InfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Info_username, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Info_address, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Panel_InfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Info_pass, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Info_email, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(Panel_InfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Info_realname, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Info_phone, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Info_type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
-        );
-
-        add(Panel_Info, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 220));
+        add(Panel_Info);
+        Panel_Info.setBounds(0, 0, 710, 220);
 
         Panel_function.setBackground(new java.awt.Color(102, 102, 255));
+        Panel_function.setLayout(null);
 
-        Button_Add.setText("Thêm");
+        Button_Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/customerAdd.png"))); // NOI18N
         Button_Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_AddActionPerformed(evt);
             }
         });
+        Panel_function.add(Button_Add);
+        Button_Add.setBounds(15, 4, 50, 50);
 
-        Button_Delete.setText("Xóa");
+        Button_Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/customerDel.png"))); // NOI18N
         Button_Delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_DeleteActionPerformed(evt);
             }
         });
+        Panel_function.add(Button_Delete);
+        Button_Delete.setBounds(15, 58, 50, 50);
 
-        Button_Update.setText("Sửa");
+        Button_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/customerUpd.png"))); // NOI18N
         Button_Update.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_UpdateActionPerformed(evt);
             }
         });
+        Panel_function.add(Button_Update);
+        Button_Update.setBounds(15, 112, 50, 50);
 
-        Button_Refresh.setText("Refresh");
+        Button_Refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/refresh.png"))); // NOI18N
         Button_Refresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_RefreshActionPerformed(evt);
             }
         });
+        Panel_function.add(Button_Refresh);
+        Button_Refresh.setBounds(15, 166, 50, 50);
 
-        javax.swing.GroupLayout Panel_functionLayout = new javax.swing.GroupLayout(Panel_function);
-        Panel_function.setLayout(Panel_functionLayout);
-        Panel_functionLayout.setHorizontalGroup(
-            Panel_functionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Panel_functionLayout.createSequentialGroup()
-                .addGap(0, 2, Short.MAX_VALUE)
-                .addGroup(Panel_functionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Button_Delete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Button_Update, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Button_Add, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Button_Refresh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        Panel_functionLayout.setVerticalGroup(
-            Panel_functionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Panel_functionLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(Button_Add, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Button_Delete, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Button_Update, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Button_Refresh, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
-        );
-
-        add(Panel_function, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 0, 80, 220));
+        add(Panel_function);
+        Panel_function.setBounds(710, 0, 80, 220);
     }// </editor-fold>//GEN-END:initComponents
 
 

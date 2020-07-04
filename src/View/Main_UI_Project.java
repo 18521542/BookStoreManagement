@@ -192,6 +192,7 @@ public class Main_UI_Project extends javax.swing.JFrame {
         Email_Info = new javax.swing.JLabel();
         Addr_Info = new javax.swing.JLabel();
         ContentPanel = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         HeadPanel = new javax.swing.JPanel();
         Xbutton = new javax.swing.JLabel();
         MinButton = new javax.swing.JLabel();
@@ -333,6 +334,11 @@ public class Main_UI_Project extends javax.swing.JFrame {
         ContentPanel.setBackground(new java.awt.Color(0, 204, 255));
         ContentPanel.setPreferredSize(new java.awt.Dimension(790, 630));
         ContentPanel.setLayout(null);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Main_Background.jpg"))); // NOI18N
+        ContentPanel.add(jLabel2);
+        jLabel2.setBounds(0, 0, 790, 630);
+
         getContentPane().add(ContentPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, 790, 630));
 
         HeadPanel.setBackground(new java.awt.Color(255, 51, 51));
@@ -685,6 +691,7 @@ public class Main_UI_Project extends javax.swing.JFrame {
     private javax.swing.JPanel UserPanel;
     private javax.swing.JLabel Xbutton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

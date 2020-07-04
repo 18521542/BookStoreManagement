@@ -2,27 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-        <group>
-            <file>file:/D:/DoAnMonHoc/src/Controller/AccountController.java</file>
-            <file>file:/D:/DoAnMonHoc/src/View/FCashReceive.java</file>
-            <file>file:/D:/DoAnMonHoc/src/View/Main_UI_Project.java</file>
-            <file>file:/D:/DoAnMonHoc/src/Model/DataAccessHelper.java</file>
-            <file>file:/D:/DoAnMonHoc/src/View/LoginForm.java</file>
-            <file>file:/D:/DoAnMonHoc/src/View/FBookInventory.java</file>
-            <file>file:/D:/DoAnMonHoc/src/View/FReportInventory.java</file>
-            <file>file:/D:/DoAnMonHoc/src/View/FCategoryAndPublisher.java</file>
-            <file>file:/D:/DoAnMonHoc/src/Model/Account.java</file>
-            <file>file:/D:/DoAnMonHoc/src/View/FStaff.java</file>
-            <file>file:/D:/DoAnMonHoc/src/View/Fbill.java</file>
-            <file>file:/D:/DoAnMonHoc/src/View/FCustomer.java</file>
-            <file>file:/D:/DoAnMonHoc/src/View/FAddStaff.java</file>
-            <file>file:/D:/DoAnMonHoc/src/View/FReportRevenue.java</file>
-            <file>file:/D:/DoAnMonHoc/src/View/FBookReceive.java</file>
-            <file>file:/D:/DoAnMonHoc/src/View/MenuItem.java</file>
-        </group>
-=======
         <group/>
->>>>>>> cc3bd59b36e21ee4ce97eea061f6f50ef111e242
     </open-files>
 </project-private>
