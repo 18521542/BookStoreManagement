@@ -61,51 +61,51 @@ public class FCustomer extends javax.swing.JPanel {
 
         jLabel3.setText("Họ, tên");
         add(jLabel3);
-        jLabel3.setBounds(10, 59, 50, 13);
+        jLabel3.setBounds(10, 80, 50, 13);
         add(jTextField1);
-        jTextField1.setBounds(60, 50, 370, 29);
+        jTextField1.setBounds(60, 70, 370, 29);
 
         jLabel4.setText("Địa chỉ");
         add(jLabel4);
-        jLabel4.setBounds(10, 98, 40, 13);
+        jLabel4.setBounds(10, 119, 40, 13);
         add(jTextField2);
-        jTextField2.setBounds(60, 90, 580, 29);
+        jTextField2.setBounds(60, 110, 610, 29);
 
         jLabel5.setText("SĐT");
         add(jLabel5);
-        jLabel5.setBounds(440, 59, 30, 13);
+        jLabel5.setBounds(440, 80, 30, 13);
         add(jTextField3);
-        jTextField3.setBounds(470, 50, 170, 29);
+        jTextField3.setBounds(470, 70, 200, 29);
 
         jLabel6.setText("Email");
         add(jLabel6);
-        jLabel6.setBounds(10, 138, 50, 13);
+        jLabel6.setBounds(10, 158, 50, 13);
         add(jTextField4);
-        jTextField4.setBounds(60, 130, 370, 29);
+        jTextField4.setBounds(60, 150, 370, 29);
 
         jLabel7.setText("Nợ");
         add(jLabel7);
-        jLabel7.setBounds(440, 138, 30, 13);
+        jLabel7.setBounds(440, 158, 30, 13);
 
         jTextField5.setEditable(false);
         add(jTextField5);
-        jTextField5.setBounds(470, 130, 170, 29);
+        jTextField5.setBounds(470, 150, 200, 29);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/customerAdd.png"))); // NOI18N
         add(jButton1);
-        jButton1.setBounds(660, 50, 50, 50);
+        jButton1.setBounds(712, 10, 35, 35);
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/customerUpd.png"))); // NOI18N
         add(jButton2);
-        jButton2.setBounds(660, 110, 50, 50);
+        jButton2.setBounds(712, 60, 35, 35);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/customerDel.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/delete.png"))); // NOI18N
         add(jButton3);
-        jButton3.setBounds(720, 50, 50, 50);
+        jButton3.setBounds(712, 160, 35, 35);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/customerSearch.png"))); // NOI18N
         add(jButton4);
-        jButton4.setBounds(720, 110, 50, 50);
+        jButton4.setBounds(712, 110, 35, 35);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -125,7 +125,7 @@ public class FCustomer extends javax.swing.JPanel {
         }
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(-2, 175, 796, 400);
+        jScrollPane1.setBounds(-2, 215, 796, 360);
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Customer_Background.jpg"))); // NOI18N
         add(jLabel9);

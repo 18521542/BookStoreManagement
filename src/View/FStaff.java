@@ -195,25 +195,15 @@ public class FStaff extends javax.swing.JPanel {
             }
         });
         Panel_function.add(Button_Add);
-        Button_Add.setBounds(15, 4, 50, 50);
+        Button_Add.setBounds(23, 16, 35, 35);
 
-        Button_Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/customerDel.png"))); // NOI18N
-        Button_Delete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button_DeleteActionPerformed(evt);
-            }
-        });
+        Button_Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/delete.png"))); // NOI18N
         Panel_function.add(Button_Delete);
-        Button_Delete.setBounds(15, 58, 50, 50);
+        Button_Delete.setBounds(23, 118, 35, 35);
 
         Button_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/customerUpd.png"))); // NOI18N
-        Button_Update.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button_UpdateActionPerformed(evt);
-            }
-        });
         Panel_function.add(Button_Update);
-        Button_Update.setBounds(15, 112, 50, 50);
+        Button_Update.setBounds(23, 67, 35, 35);
 
         Button_Refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/refresh.png"))); // NOI18N
         Button_Refresh.addActionListener(new java.awt.event.ActionListener() {
@@ -222,7 +212,7 @@ public class FStaff extends javax.swing.JPanel {
             }
         });
         Panel_function.add(Button_Refresh);
-        Button_Refresh.setBounds(15, 166, 50, 50);
+        Button_Refresh.setBounds(23, 169, 35, 35);
 
         add(Panel_function);
         Panel_function.setBounds(710, 0, 80, 220);
@@ -283,56 +273,9 @@ public class FStaff extends javax.swing.JPanel {
             
         }
     }
-    private void Button_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_DeleteActionPerformed
-       int row = Table_Account.getSelectedRow();
-       if(row==-1)
-           JOptionPane.showMessageDialog(null, "Hãy chọn tài khoản muốn xóa");
-       else {
-           int confirm = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn xóa?");
-           if(confirm==JOptionPane.YES_OPTION){
-               String username = String.valueOf(Table_Account.getValueAt(row, 2));
-               if(controller.DeleteAccountByUsername(username))
-                  JOptionPane.showMessageDialog(null, "Xóa thành công");
-               else
-                   JOptionPane.showMessageDialog(null, "Xóa thất bại");
-           }
-       }
-    }//GEN-LAST:event_Button_DeleteActionPerformed
-
     private void Table_AccountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Table_AccountMouseClicked
         ShowDataOn_Info_Panel();
     }//GEN-LAST:event_Table_AccountMouseClicked
-
-    private void Button_UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_UpdateActionPerformed
-        int row = Table_Account.getSelectedRow();
-        if(row==-1)
-            JOptionPane.showMessageDialog(null, "Hãy chọn tài khoản muốn sửa");
-        else {
-            int confirm = JOptionPane.showConfirmDialog(null, "Bạn có chắc chắn sửa?");
-            if(confirm==JOptionPane.YES_OPTION){
-                String username = Info_username.getText();
-                String pass = Info_pass.getText();
-                String email = Info_email.getText();
-                String phone = Info_phone.getText();
-                int type;
-                String TypeInCombobox = (String)Info_type.getSelectedItem();
-                if(TypeInCombobox.equals("0: Admin"))
-                     type=0;
-                else
-                     type=1;
-                String name  = Info_realname.getText();
-                String addre = Info_address.getText();
-                if(controller.UpdateAccountByUsername(username, pass, type, name, phone, email, addre))
-                {
-                     JOptionPane.showMessageDialog(null, "Sửa account thành công !");
-                }
-                else
-                {
-                     JOptionPane.showMessageDialog(null, "Sửa account thất bại !");
-                }
-            }
-        }
-    }//GEN-LAST:event_Button_UpdateActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

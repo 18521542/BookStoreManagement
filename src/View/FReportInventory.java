@@ -88,7 +88,7 @@ public class FReportInventory extends javax.swing.JPanel {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/reportAdd.png"))); // NOI18N
         add(jButton1);
-        jButton1.setBounds(370, 120, 50, 50);
+        jButton1.setBounds(378, 120, 35, 35);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -108,7 +108,7 @@ public class FReportInventory extends javax.swing.JPanel {
         }
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(0, 180, 790, 450);
+        jScrollPane1.setBounds(0, 170, 790, 460);
         add(jSpinner1);
         jSpinner1.setBounds(330, 40, 50, 29);
         add(jSpinner2);
