@@ -670,6 +670,7 @@ public class Main_UI_Project extends javax.swing.JFrame {
     private FStaff fStaff;
     private Fbill fbill; 
     private FWelcome fWelcome;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AddrLabel;
     private javax.swing.JLabel Addr_Info;
