@@ -17,16 +17,16 @@ public class DataAccessHelper {
     }
     public void getConnect () throws SQLException, ClassNotFoundException{
 //      sql_server
-        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        String url      = "jdbc:sqlserver://localhost:1433;databaseName=BookStoreData;";
-        String user     = "sa";
-        String password = "123456789";
+//        Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//        String url      = "jdbc:sqlserver://localhost:1433;databaseName=BookStoreData;";
+//        String user     = "sa";
+//        String password = "123456789";
         
 //        mysql
-//        Class.forName("com.mysql.cj.jdbc.Driver");
-//        String url = "jdbc:mysql://localhost:3306/cnpm2020?useLegacyDatetimeCode=false&serverTimezone=Asia/Ho_Chi_Minh";
-//        String user ="root";
-//        String password ="";
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        String url = "jdbc:mysql://localhost:3306/bookstoremanagement?useLegacyDatetimeCode=false&serverTimezone=Asia/Ho_Chi_Minh";
+        String user ="root";
+        String password ="";
        
 //        mysql online     
 //        Class.forName("com.mysql.cj.jdbc.Driver");

@@ -18,18 +18,37 @@ import javax.swing.event.ListSelectionListener;
 public class FStaff extends javax.swing.JPanel {
 
     AccountController controller = new AccountController();
-    /**
-     * Creates new form FStaff
-     */
     public FStaff() {
         initComponents();
         this.setSize(790, 630);
         Table_Account.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
-        Table_Account.getTableHeader().setOpaque(false);
-        Table_Account.getTableHeader().setBackground(new Color(32,136,203));
+        Table_Account.getTableHeader().setOpaque(true);
+        Table_Account.getTableHeader().setBackground(new Color(30,136,203));
         Table_Account.getTableHeader().setForeground(new Color(0,0,255));
         Table_Account.setRowHeight(25);
         ShowDataOn_Info_Panel();
+    }
+    
+        private void ShowDataOn_Info_Panel(){
+        int row = Table_Account.getSelectedRow();
+        if(row!=-1){
+            //if row is selected
+            String username = String.valueOf(Table_Account.getValueAt(row, 2));
+            Info_address.setText(controller.getAccountByUsername(username).getAddress());
+            Info_email.setText(controller.getAccountByUsername(username).getEmail());
+            Info_pass.setText(controller.getAccountByUsername(username).getPassword());
+            Info_phone.setText(controller.getAccountByUsername(username).getPhoneNumber());
+            Info_realname.setText(controller.getAccountByUsername(username).getRealName());
+            Info_username.setText(controller.getAccountByUsername(username).getUsername());
+            int type = controller.getAccountByUsername(username).getType();
+            if(type==0){
+                //when user is admin
+                Info_type.setSelectedItem("0: Admin");
+                
+            } else
+                Info_type.setSelectedItem("1: Nhân viên");
+            
+        }
     }
 
     /**
@@ -41,8 +60,6 @@ public class FStaff extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        List_Panel = new javax.swing.JScrollPane();
-        Table_Account = new javax.swing.JTable();
         Panel_Info = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -57,21 +74,104 @@ public class FStaff extends javax.swing.JPanel {
         Info_email = new javax.swing.JTextField();
         Info_phone = new javax.swing.JTextField();
         Info_type = new javax.swing.JComboBox<>();
-        jSeparator2 = new javax.swing.JSeparator();
-        jSeparator1 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
-        Panel_function = new javax.swing.JPanel();
+        Label_Background = new javax.swing.JLabel();
+        List_Panel = new javax.swing.JScrollPane();
+        Table_Account = new javax.swing.JTable();
         Button_Add = new javax.swing.JButton();
-        Button_Delete = new javax.swing.JButton();
         Button_Update = new javax.swing.JButton();
+        Button_Delete = new javax.swing.JButton();
         Button_Refresh = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 204, 51));
+        setBackground(new java.awt.Color(255, 204, 204));
         setPreferredSize(new java.awt.Dimension(790, 630));
-        setLayout(null);
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Panel_Info.setBackground(new java.awt.Color(255, 255, 153));
+        Panel_Info.setFocusable(false);
+        Panel_Info.setLayout(null);
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Username");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Panel_Info.add(jLabel1);
+        jLabel1.setBounds(60, 70, 66, 24);
+
+        jLabel2.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Password");
+        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Panel_Info.add(jLabel2);
+        jLabel2.setBounds(60, 100, 66, 26);
+
+        jLabel3.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Real Name");
+        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Panel_Info.add(jLabel3);
+        jLabel3.setBounds(60, 130, 66, 24);
+        Panel_Info.add(Info_username);
+        Info_username.setBounds(130, 70, 224, 24);
+        Panel_Info.add(Info_pass);
+        Info_pass.setBounds(130, 100, 224, 24);
+        Panel_Info.add(Info_realname);
+        Info_realname.setBounds(130, 130, 224, 24);
+
+        jLabel5.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel5.setText("Địa chỉ");
+        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Panel_Info.add(jLabel5);
+        jLabel5.setBounds(440, 70, 50, 24);
+
+        jLabel6.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("Email");
+        jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Panel_Info.add(jLabel6);
+        jLabel6.setBounds(440, 100, 50, 24);
+
+        jLabel7.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel7.setText("SĐT");
+        jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Panel_Info.add(jLabel7);
+        jLabel7.setBounds(460, 130, 30, 24);
+        Panel_Info.add(Info_address);
+        Info_address.setBounds(500, 70, 248, 24);
+        Panel_Info.add(Info_email);
+        Info_email.setBounds(500, 100, 248, 24);
+        Panel_Info.add(Info_phone);
+        Info_phone.setBounds(500, 130, 130, 24);
+
+        Info_type.setBackground(new java.awt.Color(204, 204, 255));
+        Info_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--type--", "0: Admin", "1: Nhân viên",}));
+        Info_type.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Info_typeActionPerformed(evt);
+            }
+        });
+        Panel_Info.add(Info_type);
+        Info_type.setBounds(640, 130, 110, 22);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(153, 0, 51));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Thông tin chi tiết");
+        Panel_Info.add(jLabel4);
+        jLabel4.setBounds(40, 0, 700, 44);
+
+        Label_Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Customer_Background.jpg"))); // NOI18N
+        Panel_Info.add(Label_Background);
+        Label_Background.setBounds(0, 0, 790, 180);
+
+        add(Panel_Info, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 173));
 
         List_Panel.setBackground(new java.awt.Color(255, 255, 255));
         List_Panel.setBorder(null);
+        List_Panel.setHorizontalScrollBar(null);
 
         Table_Account.setFont(new java.awt.Font("Segoe UI", 0, 18));
         Table_Account.setModel(new javax.swing.table.DefaultTableModel(
@@ -83,11 +183,12 @@ public class FStaff extends javax.swing.JPanel {
             }
         ));
         Table_Account.setToolTipText("");
-        Table_Account.setFocusable(false);
+        Table_Account.setGridColor(new java.awt.Color(255, 255, 255));
         Table_Account.setName(""); // NOI18N
         Table_Account.setOpaque(false);
         Table_Account.setRowHeight(25);
         Table_Account.setSelectionBackground(new java.awt.Color(232, 57, 95));
+        Table_Account.setShowHorizontalLines(true);
         Table_Account.getTableHeader().setReorderingAllowed(false);
         Table_Account.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -96,126 +197,45 @@ public class FStaff extends javax.swing.JPanel {
         });
         List_Panel.setViewportView(Table_Account);
 
-        add(List_Panel);
-        List_Panel.setBounds(0, 220, 790, 410);
-
-        Panel_Info.setBackground(new java.awt.Color(204, 255, 255));
-        Panel_Info.setFocusable(false);
-        Panel_Info.setLayout(null);
-
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Username");
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Panel_Info.add(jLabel1);
-        jLabel1.setBounds(0, 72, 66, 24);
-
-        jLabel2.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Password");
-        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Panel_Info.add(jLabel2);
-        jLabel2.setBounds(0, 103, 66, 26);
-
-        jLabel3.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Real Name");
-        jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Panel_Info.add(jLabel3);
-        jLabel3.setBounds(0, 135, 66, 24);
-        Panel_Info.add(Info_username);
-        Info_username.setBounds(70, 73, 224, 24);
-        Panel_Info.add(Info_pass);
-        Info_pass.setBounds(70, 105, 224, 24);
-        Panel_Info.add(Info_realname);
-        Info_realname.setBounds(70, 136, 224, 24);
-
-        jLabel5.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel5.setText("Địa chỉ");
-        jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Panel_Info.add(jLabel5);
-        jLabel5.setBounds(330, 72, 89, 24);
-
-        jLabel6.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel6.setText("Email");
-        jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Panel_Info.add(jLabel6);
-        jLabel6.setBounds(304, 104, 115, 24);
-
-        jLabel7.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel7.setText("SĐT");
-        jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        Panel_Info.add(jLabel7);
-        jLabel7.setBounds(304, 135, 115, 24);
-        Panel_Info.add(Info_address);
-        Info_address.setBounds(423, 73, 248, 24);
-        Panel_Info.add(Info_email);
-        Info_email.setBounds(423, 105, 248, 24);
-        Panel_Info.add(Info_phone);
-        Info_phone.setBounds(423, 136, 90, 24);
-
-        Info_type.setBackground(new java.awt.Color(204, 204, 255));
-        Info_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Chọn loại tài khoản--", "0: Admin", "1: Nhân viên",}));
-        Panel_Info.add(Info_type);
-        Info_type.setBounds(519, 137, 152, 21);
-
-        jSeparator2.setBackground(new java.awt.Color(255, 204, 204));
-        jSeparator2.setForeground(new java.awt.Color(255, 204, 204));
-        jSeparator2.setOpaque(true);
-        Panel_Info.add(jSeparator2);
-        jSeparator2.setBounds(0, 50, 710, 4);
-
-        jSeparator1.setBackground(new java.awt.Color(255, 204, 204));
-        jSeparator1.setForeground(new java.awt.Color(255, 204, 204));
-        jSeparator1.setOpaque(true);
-        Panel_Info.add(jSeparator1);
-        jSeparator1.setBounds(0, 178, 710, 3);
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(153, 0, 51));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Thông tin chi tiết");
-        Panel_Info.add(jLabel4);
-        jLabel4.setBounds(0, 0, 700, 44);
-
-        add(Panel_Info);
-        Panel_Info.setBounds(0, 0, 710, 220);
-
-        Panel_function.setBackground(new java.awt.Color(102, 102, 255));
-        Panel_function.setLayout(null);
+        add(List_Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 790, 410));
 
         Button_Add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/customerAdd.png"))); // NOI18N
+        Button_Add.setText("Thêm");
+        Button_Add.setPreferredSize(new java.awt.Dimension(84, 36));
         Button_Add.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_AddActionPerformed(evt);
             }
         });
-        Panel_function.add(Button_Add);
-        Button_Add.setBounds(23, 16, 35, 35);
-
-        Button_Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/delete.png"))); // NOI18N
-        Panel_function.add(Button_Delete);
-        Button_Delete.setBounds(23, 118, 35, 35);
+        add(Button_Add, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 590, 100, 30));
 
         Button_Update.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/customerUpd.png"))); // NOI18N
-        Panel_function.add(Button_Update);
-        Button_Update.setBounds(23, 67, 35, 35);
+        Button_Update.setText("Sửa");
+        Button_Update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_UpdateActionPerformed(evt);
+            }
+        });
+        add(Button_Update, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 590, 90, 30));
+
+        Button_Delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/delete.png"))); // NOI18N
+        Button_Delete.setText("Xóa");
+        Button_Delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_DeleteActionPerformed(evt);
+            }
+        });
+        add(Button_Delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 590, 90, 30));
 
         Button_Refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/refresh.png"))); // NOI18N
+        Button_Refresh.setText("refresh");
+        Button_Refresh.setPreferredSize(new java.awt.Dimension(84, 36));
         Button_Refresh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Button_RefreshActionPerformed(evt);
             }
         });
-        Panel_function.add(Button_Refresh);
-        Button_Refresh.setBounds(23, 169, 35, 35);
-
-        add(Panel_function);
-        Panel_function.setBounds(710, 0, 80, 220);
+        add(Button_Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 590, 100, 30));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -240,6 +260,7 @@ public class FStaff extends javax.swing.JPanel {
         {
             JOptionPane.showMessageDialog(null, "Thêm account thất bại !");
         }
+        controller.getAccount(Table_Account);
     }//GEN-LAST:event_Button_AddActionPerformed
 
     private void Button_RefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_RefreshActionPerformed
@@ -252,30 +273,50 @@ public class FStaff extends javax.swing.JPanel {
         Info_realname.setText("");
     }//GEN-LAST:event_Button_RefreshActionPerformed
 
-    private void ShowDataOn_Info_Panel(){
-        int row = Table_Account.getSelectedRow();
-        if(row!=-1){
-            //if row is selected
-            String username = String.valueOf(Table_Account.getValueAt(row, 2));
-            Info_address.setText(controller.getAccountByUsername(username).getAddress());
-            Info_email.setText(controller.getAccountByUsername(username).getEmail());
-            Info_pass.setText(controller.getAccountByUsername(username).getPassword());
-            Info_phone.setText(controller.getAccountByUsername(username).getPhoneNumber());
-            Info_realname.setText(controller.getAccountByUsername(username).getRealName());
-            Info_username.setText(controller.getAccountByUsername(username).getUsername());
-            int type = controller.getAccountByUsername(username).getType();
-            if(type==0){
-                //when user is admin
-                String admin = Info_type.getItemAt(0);
-                
-            } else
-                Info_type.getItemAt(1);
-            
-        }
-    }
     private void Table_AccountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Table_AccountMouseClicked
         ShowDataOn_Info_Panel();
     }//GEN-LAST:event_Table_AccountMouseClicked
+
+    private void Button_DeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_DeleteActionPerformed
+        String username = Info_username.getText();
+        if(controller.DeleteAccountByUsername(username))
+        {
+            JOptionPane.showMessageDialog(null, "Xóa account thành công !");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Xóa account thất bại !");
+        }
+        controller.getAccount(Table_Account);
+    }//GEN-LAST:event_Button_DeleteActionPerformed
+
+    private void Button_UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_UpdateActionPerformed
+        String username = Info_username.getText();
+        String pass = Info_pass.getText();
+        String email = Info_email.getText();
+        String phone = Info_phone.getText();
+        int type;
+        String TypeInCombobox = (String)Info_type.getSelectedItem();
+        if(TypeInCombobox.equals("0: Admin"))
+            type=0;
+        else
+            type=1;
+        String name  = Info_realname.getText();
+        String addre = Info_address.getText();
+        if(controller.UpdateAccountByUsername(username, pass, type, name, phone, email, addre))
+        {
+            JOptionPane.showMessageDialog(null, "Sửa account thành công !");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Sửa account thất bại !");
+        }
+        controller.getAccount(Table_Account);
+    }//GEN-LAST:event_Button_UpdateActionPerformed
+
+    private void Info_typeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Info_typeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Info_typeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -290,9 +331,9 @@ public class FStaff extends javax.swing.JPanel {
     private javax.swing.JTextField Info_realname;
     private javax.swing.JComboBox<String> Info_type;
     private javax.swing.JTextField Info_username;
+    private javax.swing.JLabel Label_Background;
     private javax.swing.JScrollPane List_Panel;
     private javax.swing.JPanel Panel_Info;
-    private javax.swing.JPanel Panel_function;
     private javax.swing.JTable Table_Account;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -301,7 +342,5 @@ public class FStaff extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables
 }

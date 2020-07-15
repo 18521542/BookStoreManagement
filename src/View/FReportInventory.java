@@ -1,19 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package View;
 
-/**
- *
- * @author ASUS
- */
-public class FReportInventory extends javax.swing.JPanel {
+import controller.ReportInventoryController;
 
-    /**
-     * Creates new form FReportInventory
-     */
+public class FReportInventory extends javax.swing.JPanel {
+    ReportInventoryController Controller=new ReportInventoryController();
     public FReportInventory() {
         initComponents();
         this.setSize(790, 630);
@@ -32,16 +23,11 @@ public class FReportInventory extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jLabel7 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        Button_Show = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jSpinner1 = new javax.swing.JSpinner();
-        jSpinner2 = new javax.swing.JSpinner();
+        Table_Inventory = new javax.swing.JTable();
+        sp_Month = new javax.swing.JSpinner();
+        sp_Year = new javax.swing.JSpinner();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
@@ -51,46 +37,34 @@ public class FReportInventory extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(790, 630));
         setLayout(null);
 
+        jLabel1.setBackground(new java.awt.Color(255, 204, 204));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Báo cáo tồn");
+        jLabel1.setOpaque(true);
         add(jLabel1);
-        jLabel1.setBounds(330, 0, 136, 32);
+        jLabel1.setBounds(0, 20, 790, 40);
 
         jLabel2.setText("Tháng");
         add(jLabel2);
-        jLabel2.setBounds(290, 48, 40, 13);
+        jLabel2.setBounds(20, 100, 40, 30);
 
         jLabel4.setText("Năm");
         add(jLabel4);
-        jLabel4.setBounds(410, 48, 30, 13);
+        jLabel4.setBounds(180, 100, 40, 30);
 
-        jLabel5.setText("Lọc theo:");
-        add(jLabel5);
-        jLabel5.setBounds(150, 88, 70, 13);
+        Button_Show.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/reportAdd.png"))); // NOI18N
+        Button_Show.setText("Xem");
+        Button_Show.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Button_ShowActionPerformed(evt);
+            }
+        });
+        add(Button_Show);
+        Button_Show.setBounds(680, 590, 90, 35);
 
-        jLabel6.setText("Thể loại");
-        add(jLabel6);
-        jLabel6.setBounds(200, 88, 50, 13);
-
-        jComboBox2.setEditable(true);
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox2);
-        jComboBox2.setBounds(250, 80, 129, 29);
-
-        jLabel7.setText("Tác giả");
-        add(jLabel7);
-        jLabel7.setBounds(390, 88, 40, 13);
-
-        jComboBox3.setEditable(true);
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        add(jComboBox3);
-        jComboBox3.setBounds(430, 80, 230, 29);
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/reportAdd.png"))); // NOI18N
-        add(jButton1);
-        jButton1.setBounds(378, 120, 35, 35);
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Table_Inventory.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Table_Inventory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -98,21 +72,35 @@ public class FReportInventory extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "STT", "Mã", "Tên sách", "Tồn đầu", "Phát sinh", "Tồn cuối"
+                "STT", "Mã sách", "Tên sách", "Tồn đầu", "Phát sinh", "Tồn cuối"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setMaxWidth(40);
-            jTable1.getColumnModel().getColumn(1).setMaxWidth(40);
+        Table_Inventory.setRowHeight(40);
+        Table_Inventory.setSelectionBackground(new java.awt.Color(232, 57, 95));
+        jScrollPane1.setViewportView(Table_Inventory);
+        if (Table_Inventory.getColumnModel().getColumnCount() > 0) {
+            Table_Inventory.getColumnModel().getColumn(0).setMaxWidth(40);
+            Table_Inventory.getColumnModel().getColumn(1).setMaxWidth(40);
         }
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(0, 170, 790, 460);
-        add(jSpinner1);
-        jSpinner1.setBounds(330, 40, 50, 29);
-        add(jSpinner2);
-        jSpinner2.setBounds(440, 40, 70, 29);
+        jScrollPane1.setBounds(0, 162, 790, 400);
+
+        sp_Month.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sp_MonthStateChanged(evt);
+            }
+        });
+        add(sp_Month);
+        sp_Month.setBounds(60, 100, 70, 30);
+
+        sp_Year.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                sp_YearStateChanged(evt);
+            }
+        });
+        add(sp_Year);
+        sp_Year.setBounds(220, 100, 70, 29);
         add(jLabel8);
         jLabel8.setBounds(0, 0, 0, 0);
 
@@ -121,23 +109,39 @@ public class FReportInventory extends javax.swing.JPanel {
         jLabel9.setBounds(0, 0, 790, 630);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void Button_ShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_ShowActionPerformed
+        // TODO add your handling code here:
+        Controller.loadInventory(Table_Inventory,Integer.parseInt(sp_Month.getValue().toString()),
+                Integer.parseInt(sp_Year.getValue().toString()));
+    }//GEN-LAST:event_Button_ShowActionPerformed
+
+    private void sp_MonthStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sp_MonthStateChanged
+        // TODO add your handling code here:
+        if(Integer.parseInt(sp_Month.getValue().toString())>12)
+            sp_Month.setValue(12);
+        else 
+            if(Integer.parseInt(sp_Month.getValue().toString())<1)
+                sp_Month.setValue(1);
+    }//GEN-LAST:event_sp_MonthStateChanged
+
+    private void sp_YearStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sp_YearStateChanged
+        // TODO add your handling code here:
+        if(Integer.parseInt(sp_Year.getValue().toString())<0)
+            sp_Year.setValue(1);
+    }//GEN-LAST:event_sp_YearStateChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JButton Button_Show;
+    private javax.swing.JTable Table_Inventory;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JSpinner jSpinner2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JSpinner sp_Month;
+    private javax.swing.JSpinner sp_Year;
     // End of variables declaration//GEN-END:variables
 }

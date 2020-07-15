@@ -17,6 +17,7 @@ public class FOptions extends javax.swing.JPanel implements java.beans.Customize
      * Creates new customizer FOptions
      */
     public FOptions() {
+        this.setSize(790,630);
         initComponents();
     }
     
@@ -32,96 +33,122 @@ public class FOptions extends javax.swing.JPanel implements java.beans.Customize
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        Label_Head = new javax.swing.JLabel();
+        Label_MinimumProduct = new javax.swing.JLabel();
+        Txf_MinProduct = new javax.swing.JTextField();
+        Label_MinQuantity = new javax.swing.JLabel();
+        Txf_MinQuantity = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jCheckBox1 = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        Button_Save = new javax.swing.JButton();
+        Button_Cancel = new javax.swing.JButton();
+        Button_Refresh = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator6 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        Background = new javax.swing.JLabel();
 
-        setLayout(null);
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Thay đổi quy định");
-        add(jLabel1);
-        jLabel1.setBounds(288, 21, 206, 32);
+        Label_Head.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        Label_Head.setText("Thay đổi quy định");
+        add(Label_Head, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, 206, -1));
 
-        jLabel2.setText("Lượng nhập tối thiểu");
-        add(jLabel2);
-        jLabel2.setBounds(286, 116, 95, 13);
+        Label_MinimumProduct.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Label_MinimumProduct.setForeground(new java.awt.Color(102, 0, 102));
+        Label_MinimumProduct.setText("Lượng nhập tối thiểu");
+        add(Label_MinimumProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 90, 160, 30));
 
-        jTextField1.setText("150");
-        add(jTextField1);
-        jTextField1.setBounds(423, 108, 69, 29);
+        Txf_MinProduct.setText("150");
+        add(Txf_MinProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 90, 69, 40));
 
-        jLabel3.setText("Lượng tồn tối thiểu (nhập)");
-        add(jLabel3);
-        jLabel3.setBounds(286, 163, 121, 13);
+        Label_MinQuantity.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        Label_MinQuantity.setForeground(new java.awt.Color(102, 0, 102));
+        Label_MinQuantity.setText("Lượng tồn trước nhập");
+        add(Label_MinQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 160, 30));
 
-        jTextField2.setText("300");
-        add(jTextField2);
-        jTextField2.setBounds(423, 155, 69, 29);
+        Txf_MinQuantity.setText("300");
+        add(Txf_MinQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, 69, 40));
 
-        jLabel4.setText("Nợ tối đa");
-        add(jLabel4);
-        jLabel4.setBounds(286, 260, 41, 13);
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 0, 102));
+        jLabel4.setText("Tiền nợ tối đa ");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, 160, 29));
 
         jTextField3.setText("20000");
-        add(jTextField3);
-        jTextField3.setBounds(422, 250, 70, 29);
+        add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 299, 70, 40));
 
-        jLabel5.setText("Lượng tồn tối thiểu (bán)");
-        add(jLabel5);
-        jLabel5.setBounds(286, 210, 115, 13);
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(102, 0, 102));
+        jLabel5.setText("Lượng tồn sau khi bán");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 160, 30));
 
         jTextField4.setText("20");
-        add(jTextField4);
-        jTextField4.setBounds(423, 202, 69, 29);
+        add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 229, 69, 40));
 
+        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jCheckBox1.setForeground(new java.awt.Color(102, 0, 102));
         jCheckBox1.setSelected(true);
         jCheckBox1.setText("Tiền thu không quá nợ");
-        add(jCheckBox1);
-        jCheckBox1.setBounds(326, 296, 131, 21);
+        add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, 230, 32));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/save.png"))); // NOI18N
-        add(jButton1);
-        jButton1.setBounds(290, 330, 35, 35);
+        Button_Save.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/save.png"))); // NOI18N
+        add(Button_Save, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 35, 35));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/cancel.png"))); // NOI18N
-        add(jButton2);
-        jButton2.setBounds(370, 330, 35, 35);
+        Button_Cancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/cancel.png"))); // NOI18N
+        add(Button_Cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, 35, 35));
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/refresh.png"))); // NOI18N
-        add(jButton3);
-        jButton3.setBounds(450, 330, 35, 35);
+        Button_Refresh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/refresh.png"))); // NOI18N
+        add(Button_Refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 450, 40, 35));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Options_Background.jpg"))); // NOI18N
-        add(jLabel6);
-        jLabel6.setBounds(0, 0, 790, 630);
+        jSeparator1.setForeground(new java.awt.Color(0, 51, 204));
+        add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 790, 20));
+
+        jSeparator2.setForeground(new java.awt.Color(255, 0, 51));
+        add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 160, 20));
+
+        jSeparator4.setForeground(new java.awt.Color(255, 0, 51));
+        add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 160, 10));
+
+        jSeparator5.setForeground(new java.awt.Color(255, 0, 51));
+        add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 160, 10));
+
+        jSeparator6.setForeground(new java.awt.Color(255, 0, 51));
+        add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, 160, 10));
+
+        jSeparator3.setForeground(new java.awt.Color(0, 51, 204));
+        add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 790, 10));
+
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Options_Background.jpg"))); // NOI18N
+        add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel Background;
+    private javax.swing.JButton Button_Cancel;
+    private javax.swing.JButton Button_Refresh;
+    private javax.swing.JButton Button_Save;
+    private javax.swing.JLabel Label_Head;
+    private javax.swing.JLabel Label_MinQuantity;
+    private javax.swing.JLabel Label_MinimumProduct;
+    private javax.swing.JTextField Txf_MinProduct;
+    private javax.swing.JTextField Txf_MinQuantity;
     private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables

@@ -28,21 +28,26 @@ public class FWelcome extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setBackground(new java.awt.Color(51, 153, 255));
+        Label_Head = new javax.swing.JLabel();
+        Label_Background = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Label_Head.setBackground(new java.awt.Color(204, 102, 255));
+        Label_Head.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        Label_Head.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Label_Head.setText("WELCOME ");
+        Label_Head.setOpaque(true);
+        add(Label_Head, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 380, 70));
+
+        Label_Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Main_Background.jpg"))); // NOI18N
+        add(Label_Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Label_Background;
+    private javax.swing.JLabel Label_Head;
     // End of variables declaration//GEN-END:variables
 }
