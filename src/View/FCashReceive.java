@@ -105,6 +105,8 @@ public class FCashReceive extends javax.swing.JPanel {
                 "STT", "Mã khách hàng", "Tên khách hàng"
             }
         ));
+        Table_Customer.setRowHeight(40);
+        Table_Customer.setSelectionBackground(new java.awt.Color(232, 57, 95));
         Table_Customer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Table_CustomerMouseClicked(evt);

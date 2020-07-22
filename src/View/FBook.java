@@ -3,6 +3,7 @@ package View;
 
 import Controller.BookController;
 import Model.Book;
+import java.awt.HeadlessException;
 import javax.swing.JOptionPane;
 
 
@@ -107,6 +108,8 @@ public class FBook extends javax.swing.JPanel {
                 "STT", "Mã", "Tên sách", "Thể loại", "Tác giả", "Nhà xuất bản", "Năm xuất bản", "Số lượng tồn", "Đơn giá nhập"
             }
         ));
+        table_book.setRowHeight(40);
+        table_book.setSelectionBackground(new java.awt.Color(232, 57, 95));
         table_book.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 table_bookMouseClicked(evt);
@@ -201,7 +204,7 @@ public class FBook extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Button_AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_AddActionPerformed
-        // TODO add your handling code here:
+       try{ // TODO add your handling code here:
         String name=Txf_Bookname.getText();
         String category=Cbb_Category.getSelectedItem().toString();
         String authors=Cbb_Author.getSelectedItem().toString();
@@ -221,6 +224,10 @@ public class FBook extends javax.swing.JPanel {
         {
             JOptionPane.showMessageDialog(FBook.getInstance(), "Thêm sách thất bại !","Thông báo", JOptionPane.OK_OPTION);
         }
+       }
+       catch(Exception e){
+           JOptionPane.showMessageDialog(FBook.getInstance(), "Thêm sách thất bại !","Thông báo", JOptionPane.OK_OPTION);
+       }
     }//GEN-LAST:event_Button_AddActionPerformed
 
     private void Txf_PublishYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Txf_PublishYearActionPerformed

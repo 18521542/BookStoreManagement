@@ -97,41 +97,41 @@ public class FStaff extends javax.swing.JPanel {
         jLabel1.setText("Username");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Panel_Info.add(jLabel1);
-        jLabel1.setBounds(60, 70, 66, 24);
+        jLabel1.setBounds(60, 50, 66, 30);
 
         jLabel2.setForeground(new java.awt.Color(0, 0, 102));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Password");
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Panel_Info.add(jLabel2);
-        jLabel2.setBounds(60, 100, 66, 26);
+        jLabel2.setBounds(60, 90, 66, 26);
 
         jLabel3.setForeground(new java.awt.Color(0, 0, 102));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Real Name");
         jLabel3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Panel_Info.add(jLabel3);
-        jLabel3.setBounds(60, 130, 66, 24);
+        jLabel3.setBounds(60, 130, 66, 30);
         Panel_Info.add(Info_username);
-        Info_username.setBounds(130, 70, 224, 24);
+        Info_username.setBounds(130, 50, 224, 30);
         Panel_Info.add(Info_pass);
-        Info_pass.setBounds(130, 100, 224, 24);
+        Info_pass.setBounds(130, 90, 224, 30);
         Panel_Info.add(Info_realname);
-        Info_realname.setBounds(130, 130, 224, 24);
+        Info_realname.setBounds(130, 130, 224, 30);
 
         jLabel5.setForeground(new java.awt.Color(0, 0, 102));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("Địa chỉ");
         jLabel5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Panel_Info.add(jLabel5);
-        jLabel5.setBounds(440, 70, 50, 24);
+        jLabel5.setBounds(440, 50, 50, 30);
 
         jLabel6.setForeground(new java.awt.Color(0, 0, 102));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Email");
         jLabel6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Panel_Info.add(jLabel6);
-        jLabel6.setBounds(440, 100, 50, 24);
+        jLabel6.setBounds(440, 90, 50, 30);
 
         jLabel7.setForeground(new java.awt.Color(0, 0, 102));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -140,11 +140,11 @@ public class FStaff extends javax.swing.JPanel {
         Panel_Info.add(jLabel7);
         jLabel7.setBounds(460, 130, 30, 24);
         Panel_Info.add(Info_address);
-        Info_address.setBounds(500, 70, 248, 24);
+        Info_address.setBounds(500, 50, 248, 30);
         Panel_Info.add(Info_email);
-        Info_email.setBounds(500, 100, 248, 24);
+        Info_email.setBounds(500, 90, 248, 30);
         Panel_Info.add(Info_phone);
-        Info_phone.setBounds(500, 130, 130, 24);
+        Info_phone.setBounds(500, 130, 130, 30);
 
         Info_type.setBackground(new java.awt.Color(204, 204, 255));
         Info_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--type--", "0: Admin", "1: Nhân viên",}));
@@ -154,7 +154,7 @@ public class FStaff extends javax.swing.JPanel {
             }
         });
         Panel_Info.add(Info_type);
-        Info_type.setBounds(640, 130, 110, 22);
+        Info_type.setBounds(640, 130, 110, 30);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(153, 0, 51));

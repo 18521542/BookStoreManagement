@@ -41,7 +41,7 @@ public class FCategoryAndAuthor extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(790, 630));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Label_Head.setBackground(new java.awt.Color(255, 204, 204));
+        Label_Head.setBackground(new java.awt.Color(102, 204, 255));
         Label_Head.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Label_Head.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Label_Head.setText("Tác giả");
@@ -49,7 +49,7 @@ public class FCategoryAndAuthor extends javax.swing.JPanel {
         Label_Head.setOpaque(true);
         add(Label_Head, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 0, 390, 70));
 
-        Panel_Author.setBackground(new java.awt.Color(51, 204, 255));
+        Panel_Author.setBackground(new java.awt.Color(204, 204, 255));
 
         Table_Author.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -62,6 +62,8 @@ public class FCategoryAndAuthor extends javax.swing.JPanel {
                 "STT", "Mã tác giả", "Tên tác giả"
             }
         ));
+        Table_Author.setRowHeight(40);
+        Table_Author.setSelectionBackground(new java.awt.Color(232, 57, 95));
         jScrollPane1.setViewportView(Table_Author);
 
         Txf_AddAuthor.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +143,7 @@ public class FCategoryAndAuthor extends javax.swing.JPanel {
 
         add(Panel_Author, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 70, 390, 560));
 
-        Panel_Category.setBackground(new java.awt.Color(51, 204, 255));
+        Panel_Category.setBackground(new java.awt.Color(204, 204, 255));
 
         Table_Category.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -154,6 +156,8 @@ public class FCategoryAndAuthor extends javax.swing.JPanel {
                 "STT", "Mã thể loại", "Tên thể loại"
             }
         ));
+        Table_Category.setRowHeight(40);
+        Table_Category.setSelectionBackground(new java.awt.Color(232, 57, 95));
         jScrollPane3.setViewportView(Table_Category);
 
         Txf_AddCategory.addActionListener(new java.awt.event.ActionListener() {
@@ -235,7 +239,7 @@ public class FCategoryAndAuthor extends javax.swing.JPanel {
 
         add(Panel_Category, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 390, 560));
 
-        Label_Head1.setBackground(new java.awt.Color(255, 51, 51));
+        Label_Head1.setBackground(new java.awt.Color(102, 204, 255));
         Label_Head1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Label_Head1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Label_Head1.setText("Thể loại");

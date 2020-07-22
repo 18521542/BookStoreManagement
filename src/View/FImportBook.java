@@ -112,6 +112,8 @@ public class FImportBook extends javax.swing.JPanel {
                 "STT", "Mã", "Tên sách", "Thể loại", "Tác giả", "Nhà xuất bản", "Năm xuất bản"
             }
         ));
+        Table_Book.setRowHeight(40);
+        Table_Book.setSelectionBackground(new java.awt.Color(232, 57, 95));
         Table_Book.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Table_BookMouseClicked(evt);
@@ -165,7 +167,7 @@ public class FImportBook extends javax.swing.JPanel {
             }
         ));
         Table_ImportBook.setGridColor(new java.awt.Color(51, 255, 255));
-        Table_ImportBook.setSelectionBackground(new java.awt.Color(0, 0, 0));
+        Table_ImportBook.setSelectionBackground(new java.awt.Color(232, 57, 95));
         jScrollPane1.setViewportView(Table_ImportBook);
 
         add(jScrollPane1);
