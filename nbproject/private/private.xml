@@ -3,17 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/DoAnMonHoc/src/View/FCashReceive.java</file>
-            <file>file:/D:/DoAnMonHoc/src/Controller/AccountController.java</file>
-            <file>file:/D:/DoAnMonHoc/src/Model/Author.java</file>
-            <file>file:/D:/DoAnMonHoc/src/Controller/AuthorController.java</file>
-            <file>file:/D:/DoAnMonHoc/src/View/FCategoryAndAuthor.java</file>
-            <file>file:/D:/DoAnMonHoc/src/Model/DataAccessHelper.java</file>
-            <file>file:/D:/DoAnMonHoc/src/View/FReportInventory.java</file>
-            <file>file:/D:/DoAnMonHoc/src/Controller/ReportInventoryController.java</file>
-            <file>file:/D:/DoAnMonHoc/src/View/FReportRevenue.java</file>
-            <file>file:/D:/DoAnMonHoc/src/Controller/BookController.java</file>
-            <file>file:/D:/DoAnMonHoc/src/Model/Account.java</file>
+            <file>file:/E:/project/BookStoreManagement/database/script.sql</file>
+            <file>file:/E:/project/BookStoreManagement/src/View/FReportInventory.java</file>
+            <file>file:/E:/project/BookStoreManagement/src/View/FReportRevenue.java</file>
+            <file>file:/E:/project/BookStoreManagement/src/View/FOptions.java</file>
+            <file>file:/E:/project/BookStoreManagement/src/View/FStaff.java</file>
+            <file>file:/E:/project/BookStoreManagement/src/View/FCashReceive.java</file>
+            <file>file:/E:/project/BookStoreManagement/src/View/Fbill.java</file>
         </group>
     </open-files>
 </project-private>
