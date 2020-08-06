@@ -165,7 +165,7 @@ END; $$
 DELIMITER ;
 
 DELIMITER $$
-create procedure USP_AddAccount(p_userName VARCHAR(255))
+create procedure USP_AddAccount(p_userName VARCHAR(255), p_password VARCHAR(255), p_type int, p_RealName VARCHAR(255), p_PhoneNumber VARCHAR(255), p_Email VARCHAR(255), p_Address VARCHAR(255))
 BEGIN
 INSERT INTO BookStoreManagement.Account (username, password, type, realname, PhoneNumber, Email, Address)
 VALUES (p_username,p_password, p_type, p_RealName, p_PhoneNumber, p_Email,p_Address);
