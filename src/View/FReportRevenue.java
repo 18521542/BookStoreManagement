@@ -26,6 +26,7 @@ public class FReportRevenue extends javax.swing.JPanel {
         sp_Year = new javax.swing.JSpinner();
         sp_Month = new javax.swing.JSpinner();
         jLabel6 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 255));
         setLayout(null);
@@ -80,7 +81,7 @@ public class FReportRevenue extends javax.swing.JPanel {
             }
         });
         add(jButton1);
-        jButton1.setBounds(680, 590, 90, 35);
+        jButton1.setBounds(660, 590, 110, 30);
 
         sp_Year.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -101,6 +102,10 @@ public class FReportRevenue extends javax.swing.JPanel {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Rev_Background.jpg"))); // NOI18N
         add(jLabel6);
         jLabel6.setBounds(0, 0, 790, 630);
+
+        jButton2.setText("jButton2");
+        add(jButton2);
+        jButton2.setBounds(540, 590, 90, 25);
     }// </editor-fold>//GEN-END:initComponents
 
     private void sp_MonthStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sp_MonthStateChanged
@@ -129,6 +134,7 @@ public class FReportRevenue extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Table_Revenue;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
