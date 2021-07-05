@@ -1,7 +1,48 @@
 
 package View;
 
+import Model.Book;
+import Model.ReportInventory;
+import Model.ReportRevenue;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.Image;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Rectangle;
+import com.itextpdf.text.pdf.BaseFont;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import controller.ReportInventoryController;
+import java.awt.Color;
+import java.awt.Desktop;
+import java.awt.GradientPaint;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.Locale;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.LegendItemCollection;
+import org.jfree.chart.axis.CategoryAxis;
+import org.jfree.chart.axis.ValueAxis;
+import org.jfree.chart.labels.ItemLabelAnchor;
+import org.jfree.chart.labels.ItemLabelPosition;
+import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.renderer.AbstractRenderer;
+import org.jfree.chart.renderer.category.BarRenderer;
+import org.jfree.chart.renderer.category.CategoryItemRenderer;
+import org.jfree.chart.renderer.category.StandardBarPainter;
+import org.jfree.chart.ui.RectangleInsets;
+import org.jfree.chart.ui.TextAnchor;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 public class FReportInventory extends javax.swing.JPanel {
     ReportInventoryController Controller=new ReportInventoryController();
@@ -20,6 +61,7 @@ public class FReportInventory extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -29,9 +71,12 @@ public class FReportInventory extends javax.swing.JPanel {
         sp_Month = new javax.swing.JSpinner();
         sp_Year = new javax.swing.JSpinner();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Inv_Background.jpg"))); // NOI18N
 
         setBackground(new java.awt.Color(153, 255, 153));
         setPreferredSize(new java.awt.Dimension(790, 630));
@@ -61,7 +106,7 @@ public class FReportInventory extends javax.swing.JPanel {
             }
         });
         add(Button_Show);
-        Button_Show.setBounds(680, 590, 90, 35);
+        Button_Show.setBounds(660, 590, 110, 30);
 
         Table_Inventory.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Table_Inventory.setModel(new javax.swing.table.DefaultTableModel(
@@ -104,9 +149,19 @@ public class FReportInventory extends javax.swing.JPanel {
         add(jLabel8);
         jLabel8.setBounds(0, 0, 0, 0);
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Inv_Background.jpg"))); // NOI18N
-        add(jLabel9);
-        jLabel9.setBounds(0, 0, 790, 630);
+        jButton1.setText("Xuất File PDF");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1);
+        jButton1.setBounds(520, 590, 120, 30);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Inv_Background.jpg"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        add(jLabel6);
+        jLabel6.setBounds(0, 0, 790, 630);
     }// </editor-fold>//GEN-END:initComponents
 
     private void Button_ShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_ShowActionPerformed
@@ -130,14 +185,267 @@ public class FReportInventory extends javax.swing.JPanel {
             sp_Year.setValue(1);
     }//GEN-LAST:event_sp_YearStateChanged
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Document document = new Document(PageSize.A4);
+                String filename = "BaoCaoTon_"+sp_Month.getValue().toString()+"-"+sp_Year.getValue().toString();
+                 try{
+                // Xử lí font chữ tiêu đề, hình, ...
+                PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream("src/reports/"+filename+".pdf"));
+                document.open();
+                File filefontTieuDe = new File("src/fonts/vuArialBold.ttf");
+                
+                BaseFont bfTieuDe=BaseFont.createFont(filefontTieuDe.getAbsolutePath(),BaseFont.IDENTITY_H,BaseFont.EMBEDDED);
+                
+                
+                Font fontTieuDe1= new Font(bfTieuDe,16);
+                fontTieuDe1.setColor(BaseColor.BLUE);
+                Font fontTieuDe2= new Font(bfTieuDe,13);
+                fontTieuDe2.setColor(BaseColor.BLUE);
+                Font fontTieuDe3= new Font(bfTieuDe,13);
+                Font fontTieuDe4= new Font(bfTieuDe,12);
+                
+                File fileFontNoiDung= new File("src/fonts//vuArial.ttf");
+                BaseFont bfNoiDung = BaseFont.createFont(filefontTieuDe.getAbsolutePath(),BaseFont.IDENTITY_H,BaseFont.EMBEDDED);
+                Font fontNoiDung1 = new Font(bfNoiDung,13);
+                Font fontNoiDung2 = new Font(bfNoiDung,12);
+                
+                
+                Image logo = Image.getInstance("src/Image/bookstore.png");
+                logo.setAbsolutePosition(80, 750);
+                logo.scaleAbsolute(50,50);
+                document.add(logo);
+                
+                Paragraph prgTenPK = new Paragraph("Cửa hàng sách UIT NHÓM 1",fontTieuDe2);
+                prgTenPK.setIndentationLeft(100);
+                document.add(prgTenPK);
+                
+                Paragraph prgDiaChiPK = new Paragraph("Khu Phố 6, Phường Bình Thọ, Tp.Thủ Đức, Tp. Hồ Chí Minh",fontNoiDung2);
+                prgDiaChiPK.setIndentationLeft(100);
+                document.add(prgDiaChiPK);
+                
+                Paragraph prgSDTPK = new Paragraph("Số Điện Thoại: 028 3456 7890",fontNoiDung2);
+                prgSDTPK.setIndentationLeft(100);
+                document.add(prgSDTPK);
+                
+                Paragraph prgTieuDe  = new Paragraph("Báo Cáo Tồn Theo Tháng",fontTieuDe1);
+                prgTieuDe.setAlignment(Element.ALIGN_CENTER);
+                prgTieuDe.setSpacingAfter(10);
+                prgTieuDe.setSpacingBefore(10);
+                document.add(prgTieuDe);
+                
+                
+                
+
+                
+                Paragraph prgTBDoanhThu= new Paragraph("I. Tình trạng tồn Của Sách",fontTieuDe2);
+                prgTBDoanhThu.setSpacingAfter(10);
+                prgTBDoanhThu.setSpacingBefore(10);
+                document.add(prgTBDoanhThu);
+                
+                PdfPTable tableDV = new PdfPTable(5);
+                        tableDV.setWidthPercentage(80);
+                        tableDV.setSpacingAfter(10);
+                        tableDV.setSpacingBefore(10);
+                        
+                        float[] tableDV_columnWidths = {50, 120, 100,100,100};
+                        tableDV.setWidths(tableDV_columnWidths);
+
+                        PdfPCell cellTDTT = new PdfPCell(new Paragraph("STT", fontTieuDe4));
+                        cellTDTT.setBorderColor(BaseColor.BLACK);
+                        cellTDTT.setHorizontalAlignment(Element.ALIGN_CENTER);
+                        cellTDTT.setVerticalAlignment(Element.ALIGN_CENTER);
+                        cellTDTT.setMinimumHeight(30);
+                        tableDV.addCell(cellTDTT);
+
+                        PdfPCell cellBookName = new PdfPCell(new Paragraph("Tên Sách", fontTieuDe4));
+                        cellBookName.setBorderColor(BaseColor.BLACK);
+                        cellBookName.setHorizontalAlignment(Element.ALIGN_CENTER);
+                        cellBookName.setVerticalAlignment(Element.ALIGN_CENTER);
+                        tableDV.addCell(cellBookName);
+
+
+                        PdfPCell cellTonDau = new PdfPCell(new Paragraph("Tồn Đầu", fontTieuDe4));
+                        cellTonDau.setBorderColor(BaseColor.BLACK);
+                        cellTonDau.setHorizontalAlignment(Element.ALIGN_CENTER);
+                        cellTonDau.setVerticalAlignment(Element.ALIGN_CENTER);
+                        tableDV.addCell(cellTonDau);
+                        
+                        PdfPCell cellPhatSinh = new PdfPCell(new Paragraph("Phát Sinh", fontTieuDe4));
+                        cellPhatSinh.setBorderColor(BaseColor.BLACK);
+                        cellPhatSinh.setHorizontalAlignment(Element.ALIGN_CENTER);
+                        cellPhatSinh.setVerticalAlignment(Element.ALIGN_CENTER);
+                        tableDV.addCell(cellPhatSinh);
+                        
+                        PdfPCell cellTonCuoi = new PdfPCell(new Paragraph("Tồn Cuối", fontTieuDe4));
+                        cellTonCuoi.setBorderColor(BaseColor.BLACK);
+                        cellTonCuoi.setHorizontalAlignment(Element.ALIGN_CENTER);
+                        cellTonCuoi.setVerticalAlignment(Element.ALIGN_CENTER);
+                        tableDV.addCell(cellTonCuoi);
+                        
+                
+                        
+                DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+                        
+                 try{
+                   
+                    ArrayList<ReportInventory> listReportInventory=new ArrayList<>();
+                    listReportInventory =  new ReportInventory().getReportInventory(Integer.parseInt(sp_Month.getValue().toString()), Integer.parseInt(sp_Year.getValue().toString()));
+
+                    float TongTien=0;
+                    int TT=1;
+
+
+                    //while(rs.next())
+                    for(ReportInventory rp : listReportInventory){  
+                        PdfPCell cellTT = new PdfPCell(new Paragraph(String.valueOf(TT), fontNoiDung2));
+                        cellTT.setHorizontalAlignment(Element.ALIGN_CENTER);
+                        cellTT.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                        cellTT.setMinimumHeight(20);
+                        tableDV.addCell(cellTT);
+                        
+                        PdfPCell cellValueBookName = new PdfPCell(new Paragraph((new Book()).getBookByID(rp.bookID()).name()));
+                        cellValueBookName.setHorizontalAlignment(Element.ALIGN_CENTER);
+                        cellValueBookName.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                        tableDV.addCell(cellValueBookName);
+
+
+                        PdfPCell cellValueTonDau = new PdfPCell(new Paragraph(String.valueOf(rp.firstInventory()), fontNoiDung2));
+                        cellValueTonDau.setPaddingLeft(10);
+                        cellValueTonDau.setHorizontalAlignment(Element.ALIGN_JUSTIFIED);
+                        cellValueTonDau.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                        tableDV.addCell(cellValueTonDau);
+                        
+                        PdfPCell cellValuePhatSinh = new PdfPCell(new Paragraph(String.valueOf(rp.incurredInventory()), fontNoiDung2));
+                        cellValuePhatSinh.setPaddingLeft(10);
+                        cellValuePhatSinh.setHorizontalAlignment(Element.ALIGN_JUSTIFIED);
+                        cellValuePhatSinh.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                        tableDV.addCell(cellValuePhatSinh);
+                        
+                        
+                        PdfPCell cellValueTonCuoi = new PdfPCell(new Paragraph(String.valueOf(rp.lastInventory()), fontNoiDung2));
+                        cellValueTonCuoi.setPaddingLeft(10);
+                        cellValueTonCuoi.setHorizontalAlignment(Element.ALIGN_JUSTIFIED);
+                        cellValueTonCuoi.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                        tableDV.addCell(cellValueTonCuoi);
+                        
+                       // TongTien = TongTien + (float)rp.money();
+                        TT=TT+1;
+                        
+                        dataset.setValue(rp.firstInventory(), "Tồn Đầu", (new Book()).getBookByID(rp.bookID()).name());
+                        dataset.setValue(rp.incurredInventory(), "Phát Sinh", (new Book()).getBookByID(rp.bookID()).name());
+                        dataset.setValue(rp.lastInventory(), "Tồn Cuối", (new Book()).getBookByID(rp.bookID()).name());
+                        
+                    }
+
+                }catch (Exception e){
+                    System.out.println(e);
+                    System.out.println("Lỗi");
+                }  
+                document.add(tableDV);
+                
+                Paragraph prgBieuDoDV= new Paragraph("II/ Biểu Đồ Tồn Theo Tháng",fontTieuDe2);
+                prgBieuDoDV.setSpacingAfter(10);
+                prgBieuDoDV.setSpacingBefore(10);
+                document.add(prgBieuDoDV);
+                
+                BufferedImage bufferedImageBDDT = CreateBarChart(dataset, sp_Month.getValue().toString(),sp_Year.getValue().toString());
+                Image image = Image.getInstance(writer, bufferedImageBDDT, 1.0f);
+                image.setAlignment(Element.ALIGN_CENTER);
+                image.scaleAbsolute(500,300);
+                document.add(image);
+                  
+                document.close();
+                writer.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            try {
+                File file = new File("reporst/"+filename+".pdf");
+                if (!Desktop.isDesktopSupported()){
+                    System.out.println("not supported");
+                    return;
+                }
+                Desktop desktop=Desktop.getDesktop();
+                if (file.exists()){
+                    desktop.open(file);
+                }
+                
+                
+            } catch (Exception e) {
+            }
+    }                                        
+    public BufferedImage CreateBarChart(DefaultCategoryDataset dataset, String month, String year){
+        BufferedImage bufferedImage = null;
+        try {
+            JFreeChart chart = ChartFactory.createBarChart(
+                    "Báo Cáo Tồn Của Tháng " + month+ "/"+ year,
+                    "Tên Sách ",
+                    "Số Lượng",
+                    dataset,
+                    PlotOrientation.VERTICAL,
+                    true,
+                    true,
+                    false
+                    
+            );
+                        
+            java.awt.Font fontTieuDe = new java.awt.Font("Tahoma",java.awt.Font.BOLD,12);
+            java.awt.Font fontNoiDung1 = new java.awt.Font("Tahoma",java.awt.Font.PLAIN,10);
+            java.awt.Font fontNoiDung2 = new java.awt.Font("Tahoma",java.awt.Font.ITALIC,10);
+            
+            chart.getTitle().setFont(fontTieuDe);
+            
+            chart.getLegend().setItemFont(fontTieuDe);
+            
+            
+            
+          //  chart.getLegend().setItemLabelPadding(new RectangleInsets(500,500,500,500));
+            
+            CategoryPlot plot = (CategoryPlot) chart.getPlot();
+            ((BarRenderer) plot.getRenderer()).setBarPainter(new StandardBarPainter());
+
+            plot.setBackgroundPaint(Color.white);
+            plot.setOutlinePaint(null);
+            
+            CategoryItemRenderer renderer = ((CategoryPlot)chart.getPlot()).getRenderer();
+            
+            renderer.setDefaultItemLabelGenerator(new StandardCategoryItemLabelGenerator());
+            renderer.setDefaultItemLabelsVisible(true);
+            
+            ItemLabelPosition position = new ItemLabelPosition(ItemLabelAnchor.OUTSIDE12, TextAnchor.TOP_CENTER);
+            renderer.setDefaultPositiveItemLabelPosition(position);
+            renderer.setDefaultItemLabelFont(fontNoiDung1);
+            
+            CategoryAxis DomainAxis = plot.getDomainAxis();
+            DomainAxis.setTickLabelFont(fontNoiDung1);
+            DomainAxis.setLabelFont(fontNoiDung2);
+            
+            ValueAxis rangeAxis = plot.getRangeAxis();
+            rangeAxis.setTickLabelFont(fontNoiDung1);
+            rangeAxis.setLabelFont(fontNoiDung2);
+            
+            
+            bufferedImage = chart.createBufferedImage(600, 300);
+            
+            
+            
+        } catch (Exception e) {
+        }
+        return bufferedImage;
+    
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button_Show;
     private javax.swing.JTable Table_Inventory;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
