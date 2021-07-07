@@ -238,10 +238,10 @@ public class FReportInventory extends javax.swing.JPanel {
                 
 
                 
-                Paragraph prgTBDoanhThu= new Paragraph("I. Tình trạng tồn Của Sách",fontTieuDe2);
-                prgTBDoanhThu.setSpacingAfter(10);
-                prgTBDoanhThu.setSpacingBefore(10);
-                document.add(prgTBDoanhThu);
+                Paragraph prgTBTon= new Paragraph("I. Tình trạng tồn Của Sách",fontTieuDe2);
+                prgTBTon.setSpacingAfter(10);
+                prgTBTon.setSpacingBefore(10);
+                document.add(prgTBTon);
                 
                 PdfPTable tableDV = new PdfPTable(5);
                         tableDV.setWidthPercentage(80);
@@ -304,7 +304,7 @@ public class FReportInventory extends javax.swing.JPanel {
                         cellTT.setMinimumHeight(20);
                         tableDV.addCell(cellTT);
                         
-                        PdfPCell cellValueBookName = new PdfPCell(new Paragraph((new Book()).getBookByID(rp.bookID()).name()));
+                        PdfPCell cellValueBookName = new PdfPCell(new Paragraph((new Book()).getBookByID(rp.bookID()).name(),fontNoiDung2));
                         cellValueBookName.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cellValueBookName.setVerticalAlignment(Element.ALIGN_MIDDLE);
                         tableDV.addCell(cellValueBookName);
