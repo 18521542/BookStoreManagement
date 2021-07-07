@@ -280,7 +280,7 @@ public class FReportRevenue extends javax.swing.JPanel {
                         cellTT.setMinimumHeight(20);
                         tableDV.addCell(cellTT);
                         
-                        PdfPCell cellBookName = new PdfPCell(new Paragraph((new Book()).getBookByID(rp.bookID()).name()));
+                        PdfPCell cellBookName = new PdfPCell(new Paragraph((new Book()).getBookByID(rp.bookID()).name(),fontNoiDung2));
                         cellBookName.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cellBookName.setVerticalAlignment(Element.ALIGN_MIDDLE);
                         tableDV.addCell(cellBookName);
@@ -330,6 +330,7 @@ public class FReportRevenue extends javax.swing.JPanel {
                   
                 document.close();
                 writer.close();
+                
             } catch (Exception e) {
                 e.printStackTrace();
             }

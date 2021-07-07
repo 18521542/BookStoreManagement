@@ -304,7 +304,7 @@ public class FReportInventory extends javax.swing.JPanel {
                         cellTT.setMinimumHeight(20);
                         tableDV.addCell(cellTT);
                         
-                        PdfPCell cellValueBookName = new PdfPCell(new Paragraph((new Book()).getBookByID(rp.bookID()).name()));
+                        PdfPCell cellValueBookName = new PdfPCell(new Paragraph((new Book()).getBookByID(rp.bookID()).name(),fontNoiDung2));
                         cellValueBookName.setHorizontalAlignment(Element.ALIGN_CENTER);
                         cellValueBookName.setVerticalAlignment(Element.ALIGN_MIDDLE);
                         tableDV.addCell(cellValueBookName);
@@ -329,7 +329,7 @@ public class FReportInventory extends javax.swing.JPanel {
                         cellValueTonCuoi.setVerticalAlignment(Element.ALIGN_MIDDLE);
                         tableDV.addCell(cellValueTonCuoi);
                         
-                       // TongTien = TongTien + (float)rp.money();
+                       
                         TT=TT+1;
                         
                         dataset.setValue(rp.firstInventory(), "Tồn Đầu", (new Book()).getBookByID(rp.bookID()).name());
@@ -400,7 +400,7 @@ public class FReportInventory extends javax.swing.JPanel {
             
             
             
-          //  chart.getLegend().setItemLabelPadding(new RectangleInsets(500,500,500,500));
+         
             
             CategoryPlot plot = (CategoryPlot) chart.getPlot();
             ((BarRenderer) plot.getRenderer()).setBarPainter(new StandardBarPainter());
