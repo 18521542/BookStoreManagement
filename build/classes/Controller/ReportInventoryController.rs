@@ -1,2 +1,0 @@
-controller.ReportInventoryController$1
-controller.ReportInventoryController
